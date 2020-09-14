@@ -1,4 +1,4 @@
-# Realisierung von Callback-Funktionen in C++ (*EventSource* und *EventSink*)
+# Realisierung von Callback-Funktionen in C++<br/>(*EventSource* und *EventSink*)
 
 Callback-Funktionen sind in vielen Programmiersprachen in der Sprache direkt verankert.
 So sind sie beispielsweise in C# unter dem Namen *Delegate* vorhanden.
