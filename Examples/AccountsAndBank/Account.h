@@ -20,7 +20,7 @@ namespace AccountsAndBank {
         double getBalance() override;
 
         // public interface
-        void deposit(double amount) override;
+        void deposit(double amount) final override;
     };
 }
 

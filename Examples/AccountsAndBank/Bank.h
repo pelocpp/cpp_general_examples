@@ -19,8 +19,9 @@ namespace AccountsAndBank {
 
     public:
         // c'tors
-        Bank() = default;
+        Bank(); 
         Bank(std::string name);
+        ~Bank();
 
         // public interface
         int createCurrentAccount(double limit);
@@ -34,6 +35,9 @@ namespace AccountsAndBank {
 
         // getter / setter
         double getTotalBalance();
+
+    private:
+        void deleteAllAccounts();
     };
 }
     

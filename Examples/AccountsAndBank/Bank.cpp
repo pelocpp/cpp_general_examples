@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "IAccount.h"
 #include "Account.h"
 #include "CurrentAccount.h"
@@ -16,7 +17,15 @@ namespace AccountsAndBank {
 
     int Bank::g_availableAccountNumber = 10000;
 
+    // c'tors/d'tor
+    Bank::Bank() = default;
+
     Bank::Bank(std::string name) : m_name(name) {}
+
+    Bank::~Bank()
+    {
+        deleteAllAccounts();
+    }
 
     int Bank::createCurrentAccount(double limit) {
         g_availableAccountNumber++;
@@ -55,6 +64,7 @@ namespace AccountsAndBank {
 
         if (pIAccount != nullptr) {
             m_accounts.erase(iter);
+            delete pIAccount;
             return true;
         }
         else {
@@ -112,6 +122,15 @@ namespace AccountsAndBank {
             total += (*iter)->getBalance();
         }
         return total;
+    }
+
+    // private helper methods
+    void Bank::deleteAllAccounts()
+    {
+        std::vector<IAccount*>::iterator iter;
+        for (iter = m_accounts.begin(); iter != m_accounts.end(); ++iter) {
+            delete (*iter);
+        }
     }
 
     std::ostream& operator<< (std::ostream& os, const Bank& bank) {
