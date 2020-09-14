@@ -104,7 +104,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *KeywordsFrequency*:
+#### [Eine Klasse *KeywordsFrequency*](Examples/KeywordsFrequency/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * STL-Container (`std::vector`, `std::map` und `std::multimap`)
@@ -113,8 +113,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-
-#### Beispiel *IntegerSet*:
+#### [Eine Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Realisierung einer Klasse mit dynamischen Daten im Instanzvariablenbereich (Variante 1)
