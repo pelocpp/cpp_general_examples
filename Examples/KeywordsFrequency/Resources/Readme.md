@@ -91,5 +91,6 @@ beispielsweise das Schlüsselwort `for` in der Funktion `std::transform` (definie
 In meiner Lösung habe ich deshalb einen anderen Ansatz gewählt, man könnte ihn als "progressive search" bezeichnen.
 Sie sehen bereits an diesen Erläuterungen, dass diese Aufgabe viel Freiraum für eine ganze Reihe kreativer Ergänzungen besitzt! 
 
+---
 
-
+[Zurück](../../../Readme.md)
