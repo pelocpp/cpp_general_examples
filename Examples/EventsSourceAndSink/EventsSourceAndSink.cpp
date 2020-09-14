@@ -1,5 +1,5 @@
 // ===========================================================================
-// std::function, std::bind und Lambda Funktionen
+// EventsSourceAndSink.cpp // std::function, std::bind und Lambda Funktionen
 // ===========================================================================
 
 #include <iostream>
@@ -22,6 +22,7 @@ namespace EventsSourceAndSink {
     private:
         // single-cast event source
         std::function<CallbackType> m_handler;
+
         // multi-cast event source
         std::vector<std::function<CallbackType>> m_handlers;
     };
@@ -154,7 +155,6 @@ void main_events_source_and_sink() {
     test_03();
     test_04();
 }
-
 
 // ===========================================================================
 // End-of-File
