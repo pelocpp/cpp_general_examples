@@ -86,7 +86,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *CustomIterator*:
+#### [Eine benutzerdefinierte Iterator-Klasse](Examples/CustomIterator/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Implementierung einer Custom Iterator Klasse (hier: Klasse `RangeIterator`)
@@ -95,8 +95,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-
-#### Beispiel *Bank*:
+#### [Bankkonten und -institut](Examples/AccountsAndBank/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Übung zum Thema "Vererbung"
