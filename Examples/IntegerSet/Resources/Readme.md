@@ -16,7 +16,13 @@ eine Spezifikation der öffentlichen Schnittstelle der Klasse wieder.
 
 ## Spezifikation der Klasse `IntegerSet`
 
-Erstellen Sie eine Klasse `IntegerSet`, die eine Menge ganzer Zahlen mit zentralen Operationen wie das Einfügen oder Löschen von Elementen realisiert. Arrays gibt es in Dart in Gestalt von `List<>`-Objekten. Verwenden Sie deshalb ein `List<int>`-Objekt, um die Elemente der Menge intern in einem `IntegerSet`-Objekt zu verwalten. Beachten Sie dabei: Listen dieses Typs sind streng typisiert, d.h., alle Methoden zum Einfügen oder Entfernen von Elementen erlauben in diesem Beispiel nur `int`-Werte – was in Bezug auf die Aufgabenstellung ja keinen Nachteil darstellt. Der Dart-Präcompiler meldet bereits zur Übersetzungszeit Fehler, wenn Sie aktuelle Parameter falschen Typs verwenden.
+Erstellen Sie eine Klasse `IntegerSet`, die eine Menge ganzer Zahlen mit zentralen Operationen wie das Einfügen oder Löschen von Elementen realisiert.
+Arrays gibt es in C++ in Gestalt von `std::vector`-Objekten.
+Verwenden Sie deshalb ein `std::vector<int>`-Objekt, um die Elemente der Menge intern in einem `IntegerSet`-Objekt zu verwalten.
+Beachten Sie dabei: Listen dieses Typs sind streng typisiert, d.h.,
+alle Methoden zum Einfügen oder Entfernen von Elementen erlauben in diesem Beispiel nur `int`-Werte – was in
+Bezug auf die Aufgabenstellung ja keinen Nachteil darstellt.
+Der C++-Präcompiler meldet bereits zur Übersetzungszeit Fehler, wenn Sie aktuelle Parameter falschen Typs verwenden.
 
 Damit kommen wir auf die öffentliche Schnittstelle der `IntegerSet`-Klasse zu sprechen. Die Konstruktoren der Klasse haben wir in Tabelle 1 zusammengestellt:
 

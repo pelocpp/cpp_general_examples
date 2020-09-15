@@ -193,8 +193,7 @@ void test_01_frequency() {
     using namespace KeywordsFrequencyApplication;
 
     KeywordsFrequency keywordsFrequency;
-    keywordsFrequency.setFile("..\\Examples\\KeywordsFrequency\\KeywordsFrequency.cpp");
-    // keywordsFrequency.setFile("..\\GeneralExamples\\KeywordsFrequency\\HugeCppTestFile.txt");
+    keywordsFrequency.setFile("..\\..\\Examples\\KeywordsFrequency\\KeywordsFrequency.cpp");
     keywordsFrequency.parseFile();
     keywordsFrequency.printResults();
 }
@@ -204,11 +203,11 @@ void test_02_frequency() {
     using namespace KeywordsFrequencyApplication;
 
     KeywordsFrequency keywordsFrequency;
-    keywordsFrequency.setFile("..\\Examples\\KeywordsFrequency\\KeywordsFrequency.cpp");
+    keywordsFrequency.setFile("..\\..\\Examples\\KeywordsFrequency\\KeywordsFrequency.cpp");
     keywordsFrequency.parseFile();
     keywordsFrequency.printResults();
 
-    keywordsFrequency.setFile("..\\Examples\\KeywordsFrequency\\HugeCppTestFile.txt");
+    keywordsFrequency.setFile("..\\..\\Examples\\KeywordsFrequency\\HugeCppTestFile.txt");
     keywordsFrequency.parseFile();
     keywordsFrequency.printResults();
 }
