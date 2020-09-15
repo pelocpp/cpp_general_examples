@@ -46,7 +46,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *Phonebook*:
+#### [Klasse `Phonebook`](Examples/Phonebook/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Entwicklung einer Anwendung mit STL-Container (`std::vector`)
@@ -79,7 +79,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *Reverse Polish Notation (RPN) Calculator*<br/>(Unterverzeichnis *RPNCalculator*):
+#### [Ein *Reverse Polish Notation (RPN) Calculator*](Examples/RPNCalculator/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Klassentemplates
