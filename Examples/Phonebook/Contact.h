@@ -14,7 +14,7 @@ namespace PhonebookDemo {
             std::string firstName,
             std::string lastName,
             std::string email, 
-            size_t phonenumber);
+            int phonenumber);
 
         virtual ~Contact();
 
@@ -25,8 +25,8 @@ namespace PhonebookDemo {
         // getter / setter
         const std::string& getFirstName() const { return m_firstName; }
         const std::string& getLastName() const { return m_lastName; }
-        size_t getPhonenumber() const { return m_phonenumber; }
-        void setPhonenumber(size_t phonenumber) { m_phonenumber = phonenumber; }
+        int getPhonenumber() const { return m_phonenumber; }
+        void setPhonenumber(int phonenumber) { m_phonenumber = phonenumber; }
 
         // comparison operator(s) - needed for std::find
         friend bool operator== (const Contact&, const Contact&);
@@ -47,7 +47,7 @@ namespace PhonebookDemo {
         std::string m_firstName;
         std::string m_lastName;
         std::string m_email;
-        size_t m_phonenumber;
+        int m_phonenumber;
     };
 }
 

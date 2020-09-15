@@ -41,7 +41,7 @@ namespace TemplateStack {
     void test_03() {
 
         Stack<int, 3> intStack;
-        for (size_t n = 0; n < 5; n++) {
+        for (int n = 0; n < 5; n++) {
             try {
                 intStack.push(10 * (n+1));
             }

@@ -20,7 +20,7 @@ namespace IntegerSetVector {
 
     // getter
     int IntegerSet::size() const {
-        return m_set.size();
+        return static_cast<int> (m_set.size());
     }
 
     bool IntegerSet::isEmpty() const {

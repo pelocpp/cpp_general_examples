@@ -51,21 +51,21 @@ namespace PhonebookDemo {
      *  helper functions for Phonebook
      */
 
-    size_t size(const Phonebook& phonebook);
+    int size(const Phonebook& phonebook);
 
     void insert(
         Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
         const std::string& email,
-        size_t phonenumber);
+        int phonenumber);
 
     void insert(
         Phonebook& phonebook,
         std::string&& firstName,
         std::string&& lastName,
         std::string&& email,
-        size_t phonenumber);
+        int phonenumber);
 
     void listContactsClassic(const Phonebook& phonebook);
 
@@ -95,25 +95,25 @@ namespace PhonebookDemo {
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t& phonenumber);
+        int& phonenumber);
 
     bool getModernEx(
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t& phonenumber);
+        int& phonenumber);
 
     bool getModernExEx(
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t& phonenumber);
+        int& phonenumber);
 
     bool updatePhoneNumberModern(
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t phonenumber);
+        int phonenumber);
 
     bool remove(
         Phonebook& phonebook,
@@ -161,8 +161,8 @@ namespace PhonebookDemo {
      *  implementation of helper functions
      */
 
-    size_t size(const Phonebook& phonebook) {
-        return phonebook.size();
+    int size(const Phonebook& phonebook) {
+        return static_cast<int> (phonebook.size());
     }
 
     void insert(
@@ -170,7 +170,7 @@ namespace PhonebookDemo {
         const std::string& firstName,
         const std::string& lastName,
         const std::string& email,
-        size_t phonenumber) {
+        int phonenumber) {
     
         std::unique_ptr<Contact> pContact = std::make_unique<Contact>(
             firstName,
@@ -186,7 +186,7 @@ namespace PhonebookDemo {
         std::string&& firstName,
         std::string&& lastName,
         std::string&& email,
-        size_t phonenumber) {
+        int phonenumber) {
 
         std::unique_ptr<Contact> pContact = std::make_unique<Contact>(
             std::move(firstName),
@@ -291,7 +291,7 @@ namespace PhonebookDemo {
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t& phonenumber)
+        int& phonenumber)
     {
         bool result = false;
         phonenumber = 0;
@@ -319,7 +319,7 @@ namespace PhonebookDemo {
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t& phonenumber)
+        int& phonenumber)
     {
         bool result = false;
         phonenumber = 0;
@@ -346,7 +346,7 @@ namespace PhonebookDemo {
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t& phonenumber)
+        int& phonenumber)
     {
         phonenumber = 0;
 
@@ -364,7 +364,7 @@ namespace PhonebookDemo {
         const Phonebook& phonebook,
         const std::string& firstName,
         const std::string& lastName,
-        size_t phonenumber) {
+        int phonenumber) {
 
         Phonebook::const_iterator resIter = std::find_if(
             std::begin(phonebook),
@@ -446,8 +446,8 @@ namespace PhonebookDemo {
                 const std::unique_ptr<Contact>& b) {
                 const Contact* pContact1 = a.get();
                 const Contact* pContact2 = b.get();
-                size_t leftNumber = pContact1->getPhonenumber();
-                size_t rightNumber = pContact2->getPhonenumber();
+                int leftNumber = pContact1->getPhonenumber();
+                int rightNumber = pContact2->getPhonenumber();
                 return (leftNumber < rightNumber) ? true : false;
             }
         );
@@ -550,7 +550,7 @@ namespace PhonebookDemo {
         std::string susanFirst("Susan");
         std::string susanLast("Schmidt");
         std::string susanEmail("susan@gmx.de");
-        size_t susanPhone{ 13579 };
+        int susanPhone{ 13579 };
         insert(myContacts, susanFirst, susanLast, susanEmail, susanPhone);
 
         listContactsClassic(myContacts);
@@ -592,7 +592,7 @@ namespace PhonebookDemo {
             << (result.first ? "Found: " : "Not found!") 
             << (result.first ? std::to_string(result.second) : "") << std::endl;
 
-        size_t phonenumber;
+        int phonenumber;
         bool found = getModern(myContacts, "Hans", "Meier", phonenumber);
         std::cout
             << (result.first ? "Found: " : "Not found!")

@@ -27,11 +27,11 @@ namespace PhonebookDemo {
         std::string firstName, 
         std::string lastName,
         std::string email,
-        size_t phonenumber) : 
+        int phonenumber) :
             m_firstName(firstName), m_lastName(lastName),
             m_email(email), m_phonenumber(phonenumber) {
             std::cout 
-                << "c'tor Contact(string, string, string, size_t)"
+                << "c'tor Contact(string, string, string, int)"
                 << std::endl;
     }
 
