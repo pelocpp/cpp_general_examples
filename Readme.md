@@ -1,4 +1,4 @@
-# C++ General Examples Beginner Level
+# C++ General Examples (Beginner Level)
 
 In diesem Repository sind zahlreiche kleinere C++ -Programme abgelegt,
 um diverse Features von C++ zu demonstrieren. Im Großen und Ganzen wurde dabei versucht,
@@ -9,7 +9,7 @@ deshalb erfolgt die Ablage der Beispiele in diesem Repository.
 
 ## Inhaltsverzeichnis:
 
-#### [Realisierung der Standardklasse `std::tuple<>`](Examples/CustomTuple/Resources/Readme.md):
+#### [Realisierung der Standardklasse `std::tuple<>`](Examples/CustomTuple/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Templates im Allgemeinen
@@ -18,7 +18,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Klassenhierarchie mit geometrischen Figuren (Shapes)](Examples/Shapes/Resources/Readme.md):
+#### [Klassenhierarchie mit geometrischen Figuren (Shapes)](Examples/Shapes/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Vererbung
@@ -28,7 +28,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Demonstration von partieller Template Spezialisierung (Beispiel *SubRange*)](Examples/SubRange/Resources/Readme.md):
+#### [Demonstration von partieller Template Spezialisierung (Beispiel *SubRange*)](Examples/SubRange/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Klassentemplates
@@ -38,7 +38,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Einfache Realisierung einer *SmartPointer*-Klasse](Examples/SmartPointer/Resources/Readme.md):
+#### [Einfache Realisierung einer *SmartPointer*-Klasse](Examples/SmartPointer/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Exemplarische Implementierung eines Smart Pointers</br>(zum besseren Verständnis der Standardklassen `std::unique_ptr`, `std::shared_ptr` und `std::weak_ptr`)
@@ -46,7 +46,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Klasse `Phonebook`](Examples/Phonebook/Resources/Readme.md):
+#### [Klasse `Phonebook`](Examples/Phonebook/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Entwicklung einer Anwendung mit STL-Container (`std::vector`)
@@ -58,7 +58,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Template-Klasse für eine Stapel (Stack)](Examples/TemplateStack/Resources/Readme.md):
+#### [Template-Klasse für eine Stapel (Stack)](Examples/TemplateStack/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Erstellung eines einfachen Klassentemplates
@@ -69,7 +69,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Realisierung von Callback-Funktionen in C++ (*EventSource* und *EventSink*)](Examples/EventsSourceAndSink/Resources/Readme.md):
+#### [Realisierung von Callback-Funktionen in C++ (*EventSource* und *EventSink*)](Examples/EventsSourceAndSink/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Umsetzung zweier Klassen *EventSource* und *EventSink* zum ereignisbasierten Nachrichtenaustausch
@@ -79,7 +79,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Ein *Reverse Polish Notation (RPN) Calculator*](Examples/RPNCalculator/Resources/Readme.md):
+#### [Ein *Reverse Polish Notation (RPN) Calculator*](Examples/RPNCalculator/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Klassentemplates
@@ -87,7 +87,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Eine benutzerdefinierte Iterator-Klasse](Examples/CustomIterator/Resources/Readme.md):
+#### [Eine benutzerdefinierte Iterator-Klasse](Examples/CustomIterator/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Implementierung einer Custom Iterator Klasse (hier: Klasse `RangeIterator`)
@@ -96,7 +96,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Bankkonten und -institut](Examples/AccountsAndBank/Resources/Readme.md):
+#### [Bankkonten und -institut](Examples/AccountsAndBank/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Übung zum Thema "Vererbung"
@@ -105,7 +105,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Eine Klasse *KeywordsFrequency*](Examples/KeywordsFrequency/Resources/Readme.md):
+#### [Eine Klasse *KeywordsFrequency*](Examples/KeywordsFrequency/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * STL-Container (`std::vector`, `std::map` und `std::multimap`)
@@ -114,7 +114,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Eine Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md):
+#### [Eine Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Realisierung einer Klasse mit dynamischen Daten im Instanzvariablenbereich (Variante 1)
@@ -125,7 +125,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Linked List mit `std::unique_ptr<>`](Examples/LinkedList/Resources/Readme.md):
+#### [Linked List mit `std::unique_ptr<>`](Examples/LinkedList/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Implementierung einer verketteten Liste (*linked list*) mit `std::unique_ptr`-Objekten
