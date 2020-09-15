@@ -10,10 +10,10 @@
 #include <iterator>
 #include <stdexcept>
 
-// #define MyStackTemplate 1
+#define MyStackTemplate 1
 
 #if defined (MyStackTemplate)
-#include "..\\TemplateStack\\TemplateStack.hpp"
+#include "..\\..\\Examples\\TemplateStack\\TemplateStack.hpp"
 #endif
 
 namespace ReversePolishNotationCalculator {
@@ -136,7 +136,7 @@ void main_rpn_calculator()
 
     test_01();
     test_02();
-    test_03();
+    //test_03();
 }
 
 // ===========================================================================

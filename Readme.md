@@ -58,7 +58,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *Stack* (Unterverzeichnis *TemplateStack*):
+#### [Template-Klasse für eine Stapel (Stack)](Examples/TemplateStack/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Erstellung eines einfachen Klassentemplates
