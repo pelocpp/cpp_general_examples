@@ -50,16 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntegerSet_01_Classic.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IntegerSet_02_Vector.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IntegerSet_03_Classic_MoveSemantics.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IntegerSet_04_Vector_MoveSemantics.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
