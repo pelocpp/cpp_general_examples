@@ -54,7 +54,7 @@ Folgende Aspekte werden betrachtet:
   * Anwendung von `std::move`
   * Dateiein- und -ausgabe (`std::ofstream` und `std::ifstream`)
   * Lambda-Funktionen
-  * Sortieren (std::sort)
+  * Sortieren (`std::sort`)
 
 ---
 
