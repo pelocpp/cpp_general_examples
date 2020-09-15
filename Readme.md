@@ -28,7 +28,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *SubRange*:
+#### [Demonstration von partieller Template Spezialisierung (Beispiel *SubRange*)](Examples/SubRange/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Klassentemplates

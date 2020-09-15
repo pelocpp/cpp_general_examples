@@ -156,7 +156,6 @@ namespace PhonebookDemo {
         return s;
     }
 
-
     /*
      *  implementation of helper functions
      */
