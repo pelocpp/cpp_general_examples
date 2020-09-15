@@ -18,7 +18,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *Shapes*:
+#### [Klassenhierarchie mit geometrischen Figuren (Shapes)](Examples/Shapes/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Vererbung
@@ -38,7 +38,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### Beispiel *SmartPointer*:
+#### [Einfache Realisierung einer *SmartPointer*-Klasse](Examples/SmartPointer/Resources/Readme.md):
 
 Folgende Aspekte werden betrachtet:
   * Exemplarische Implementierung eines Smart Pointers</br>(zum besseren Verständnis der Standardklassen `std::unique_ptr`, `std::shared_ptr` und `std::weak_ptr`)
