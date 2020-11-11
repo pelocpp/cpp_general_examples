@@ -31,8 +31,8 @@ namespace Shapes {
         virtual ~Shape();
 
         // public interface
-        std::string version() override;
-        void draw(std::ostream& os) override;
+        virtual std::string version() override;
+        virtual void draw(std::ostream& os) override;
     };
 
     // ===========================================================================
@@ -51,8 +51,8 @@ namespace Shapes {
         virtual ~TwoDimensional();
 
         // public interface
-        void draw(std::ostream& os) override;
-        void moveTo(double x, double y);
+        virtual void draw(std::ostream& os) override;
+        virtual void moveTo(double x, double y);
 
         // contract for derived classes
         virtual double area() const = 0;
@@ -76,8 +76,8 @@ namespace Shapes {
         virtual ~ThreeDimensional();
 
         // public interface
-        void draw(std::ostream& os) override;
-        void moveTo(double x, double y, double z);
+        virtual void draw(std::ostream& os) override;
+        virtual void moveTo(double x, double y, double z);
 
         // contract for derived classes
         virtual double volume() const = 0;
@@ -100,9 +100,9 @@ namespace Shapes {
         Triangle(double x, double y, double a, double b, double c);
         virtual ~Triangle();
 
-        void draw(std::ostream& os) override;
-        double area() const final;
-        double circumference() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double area() const final;
+        virtual double circumference() const final;
     };
 
     // ===========================================================================
@@ -120,9 +120,9 @@ namespace Shapes {
         Rectangle(double x, double y, double width, double height);
         virtual ~Rectangle();
 
-        void draw(std::ostream& os) override;
-        double area() const final;
-        double circumference() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double area() const final;
+        virtual double circumference() const final;
     };
 
     // ===========================================================================
@@ -132,16 +132,16 @@ namespace Shapes {
         friend std::ostream& operator<< (std::ostream&, const Circle&);
 
     protected:
-        double  m_radius;
+        double m_radius;
 
     public:
         Circle();
         Circle(double x, double y, double r);
         virtual ~Circle();
 
-        void draw(std::ostream& os) override;
-        double area() const final;
-        double circumference() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double area() const final;
+        virtual double circumference() const final;
     };
 
     // ===========================================================================
@@ -158,9 +158,9 @@ namespace Shapes {
         Cube(double x, double y, double z, double size);
         virtual ~Cube();
 
-        void draw(std::ostream& os) override;
-        double volume() const final;
-        double surface() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double volume() const final;
+        virtual double surface() const final;
     };
 
     // ===========================================================================
@@ -179,9 +179,9 @@ namespace Shapes {
         Cuboid(double x, double y, double z, double width, double height, double depth);
         virtual ~Cuboid();
 
-        void draw(std::ostream& os) override;
-        double volume() const final;
-        double surface() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double volume() const final;
+        virtual double surface() const final;
     };
 
     // ===========================================================================
@@ -198,9 +198,9 @@ namespace Shapes {
         Sphere(double x, double y, double z, double radius);
         virtual ~Sphere();
 
-        void draw(std::ostream& os) override;
-        double volume() const final;
-        double surface() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double volume() const final;
+        virtual double surface() const final;
     };
 
     // ===========================================================================
@@ -218,9 +218,9 @@ namespace Shapes {
         Cone(double x, double y, double z, double radius, double height);
         virtual ~Cone();
 
-        void draw(std::ostream& os) override;
-        double volume() const final;
-        double surface() const final;
+        virtual void draw(std::ostream& os) override;
+        virtual double volume() const final;
+        virtual double surface() const final;
     };
 }
 

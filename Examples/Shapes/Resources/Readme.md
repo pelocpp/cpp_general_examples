@@ -18,7 +18,7 @@ und ein Kreis (Klasse `Circle`) nicht fehlen.
 Zu den dreidimensionalen Figuren gehört ein Würfel (Klasse `Cube`), eine Kugel (Klasse `Sphere`),
 ein Kegel (Klasse `Cone`) sowie ein `Quader` (Klasse `Cuboid`).
 
-<img src="ShapesInheritance.png" width="350">
+<img src="ShapesInheritance.png" width="550">
 
 Abbildung 1: Klassenhierarchie geometrischer Figuren.
 
