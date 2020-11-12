@@ -11,6 +11,8 @@ namespace Shapes {
     class AbstractShape
     {
     public:
+        virtual ~AbstractShape() {};
+
         // public interface
         virtual std::string version() = 0;
         virtual void draw(std::ostream& os) = 0;
