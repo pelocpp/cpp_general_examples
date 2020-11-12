@@ -128,6 +128,8 @@ namespace PhonebookDemo {
     void saveTo(const Phonebook& phonebook, const std::string& filename);
     void readFrom(Phonebook& phonebook, const std::string& filename);
 
+    void inAndOutFromVector(Phonebook& phonebook);
+
     std::string toString(const Phonebook& phonebook);
 
     // =======================================================================
@@ -743,6 +745,11 @@ namespace PhonebookDemo {
 
     void test_11() {
         insert(myContacts, "Franz", "Schneider", "franzschneider@gmx.de", 123456);
+        insert(myContacts, "Hans", "Mueller", "hans@gmx.de", 435261);
+        insert(myContacts, "Franz", "Meier", "franzmeier@gmx.de", 545678);
+        insert(myContacts, "Werner", "Hofmann", "werner@gmx.de", 111111);
+        insert(myContacts, "Andreas", "Diehler", "andreas@gmx.de", 888888);
+
         inAndOutFromVector(myContacts);
     }
 }
@@ -750,16 +757,16 @@ namespace PhonebookDemo {
 void main_phonebook() {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     using namespace PhonebookDemo;
-    test_01();
-    test_02();
-    test_03();
-    test_04();
-    test_05();
-    test_06();
-    test_07();
-    test_08();
-    test_09();
-    test_10();
+    //test_01();
+    //test_02();
+    //test_03();
+    //test_04();
+    //test_05();
+    //test_06();
+    //test_07();
+    //test_08();
+    //test_09();
+    //test_10();
     test_11();
 }
 
