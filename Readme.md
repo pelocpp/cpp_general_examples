@@ -32,7 +32,7 @@ Folgende Aspekte werden betrachtet:
 
 Folgende Aspekte werden betrachtet:
   * Klassentemplates
-  * Templates mit value-Parametern
+  * Templates mit *value*-Parametern
   * Template-Spezialisierung von Funktionstemplates
   * Template Metaprogrammierung 
 
