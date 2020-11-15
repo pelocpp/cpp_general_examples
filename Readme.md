@@ -1,4 +1,4 @@
-# C++ General Examples (Beginner Level)
+# C++ General Examples
 
 In diesem Repository sind zahlreiche kleinere C++ -Programme abgelegt,
 um diverse Features von C++ zu demonstrieren. Im Groﬂen und Ganzen wurde dabei versucht,
