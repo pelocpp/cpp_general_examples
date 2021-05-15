@@ -4,7 +4,7 @@
 
 #include "Fraction.h"
 
-void DemoUnaryOperators()
+void TestUnaryOperators()
 {
     Fraction f(1, 2);
     std::cout << "f  = " << f << std::endl;
@@ -14,7 +14,7 @@ void DemoUnaryOperators()
     std::cout << "~f = " << f << std::endl;
 }
 
-void DemoBinaryOperators()
+void TestBinaryOperators()
 {
     Fraction a(1, 7);
     Fraction b(3, 7);
@@ -39,7 +39,7 @@ void DemoBinaryOperators()
     std::cout << "a / b = " << c << std::endl;
 }
 
-void DemoArithmeticAssigmentOperators()
+void TestArithmeticAssigmentOperators()
 {
     Fraction a(1, 7);
     Fraction b(3, 7);
@@ -62,7 +62,7 @@ void DemoArithmeticAssigmentOperators()
     std::cout << c << std::endl;
 }
 
-void DemoComparisonOperators()
+void TestComparisonOperators()
 {
     Fraction f(1, 2);
     Fraction g(1, 3);
@@ -78,7 +78,7 @@ void DemoComparisonOperators()
     std::cout << "f != g: " << (f != g) << std::endl;
 }
 
-void DemoTypeConversionOperators()
+void TestTypeConversionOperators()
 {
     Fraction a;
 
@@ -90,14 +90,14 @@ void DemoTypeConversionOperators()
     std::cout << a << std::endl;
 }
 
-void DemoTypeConversionOperator02()
+void TestTypeConversionOperator02()
 {
     Fraction f(1, 7);
     double d = f;
     std::cout << "d: " << d << std::endl;
 }
 
-void DemoIncrementOperators()
+void TestIncrementOperators()
 {
     Fraction f(1, 2);
     Fraction g;
@@ -117,7 +117,7 @@ void DemoIncrementOperators()
     std::cout << "g: " << g << std::endl;
 }
 
-void DemoInputOutput()
+void TestInputOutput()
 {
     Fraction f(1, 2);
     std::cout << "f: " << f << std::endl;
@@ -131,14 +131,14 @@ void DemoInputOutput()
 
 int main ()
 {
-    DemoUnaryOperators();
-    DemoBinaryOperators();
-    DemoArithmeticAssigmentOperators();
-    DemoComparisonOperators();
-    DemoTypeConversionOperators();
-    DemoTypeConversionOperator02();
-    DemoIncrementOperators();
-    DemoInputOutput();
+    TestUnaryOperators();
+    TestBinaryOperators();
+    TestArithmeticAssigmentOperators();
+    TestComparisonOperators();
+    TestTypeConversionOperators();
+    TestTypeConversionOperator02();
+    TestIncrementOperators();
+    TestInputOutput();
 
     return 0;
 }

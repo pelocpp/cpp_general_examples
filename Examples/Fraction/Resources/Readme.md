@@ -1,4 +1,4 @@
-# Beispiel "Fraction"
+# Beispiel Klasse `Fraction`
 
 ## Einführung
 

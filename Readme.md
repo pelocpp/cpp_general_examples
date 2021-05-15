@@ -117,12 +117,23 @@ Folgende Aspekte werden betrachtet:
 #### [Klasse *Fraction*](Examples/Fraction/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
-  * Prinzipielle Realisierung einer einfachen Klasse ohne dynamische Daten im Instanzvariablenbereich
+  * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
   * Zugriffsrechte (`private`, `public`)
   * Überladen von Operatoren
   * `friend`-Mechanismus
   * getter/setter-Methoden
   * Klassenmethoden
+
+---
+
+#### [Klasse *String*](Examples/String/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Prinzipielle Realisierung einer einfachen Klasse *mit* dynamischen Daten im Instanzvariablenbereich
+  * Konstruktoren und Destruktor im Zusammenspiel (*Big&ndash;Three*)
+  * Zugriffsrechte (`private`, `public`)
+  * Überladen von Operatoren
+  * `friend`-Mechanismus
 
 ---
 
@@ -143,4 +154,3 @@ Folgende Aspekte werden betrachtet:
   * Implementierung einer verketteten Liste (*linked list*) mit `std::unique_ptr`-Objekten
 
 ---
-
