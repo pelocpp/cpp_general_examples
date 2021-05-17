@@ -4,7 +4,7 @@
 
 #include "Time.h"
 
-void TestCtors()
+void testCtors()
 {
     Time t1;
     std::cout << t1 << std::endl;
@@ -16,30 +16,30 @@ void TestCtors()
     std::cout << t4 << std::endl;
 }
 
-void TestAdd()
+void testAdd()
 {
     // testing 'Add'
     Time t1(0, 0, 12);
     Time t2(33, 33, 3);
     for (int i = 0; i < 5; i++)
     {
-        t1.Add(t2);
+        t1.add(t2);
         std::cout << t1 << std::endl;
     }
 }
 
-void TestDiff()
+void testDiff()
 {
     // testing 'Diff'
     Time t1;
     Time t2("23:59:59");
-    Time t3 = t1.Diff(t2);
+    Time t3 = t1.diff(t2);
     std::cout << t3 << std::endl;
-    t3 = t2.Diff(t1);
+    t3 = t2.diff(t1);
     std::cout << t3 << std::endl;
 }
 
-void TestArithmeticOperators()
+void testArithmeticOperators()
 {
     // testing operators
     Time t1(15, 30, 6);
@@ -53,18 +53,18 @@ void TestArithmeticOperators()
     std::cout << t2 << std::endl;
 }
 
-void TestIncrementOperators()
+void testIncrementOperators()
 {
     // testing 'Increment'
     Time t(55, 59, 23);
     for (int i = 0; i < 8; i++)
     {
-        t.Increment();
+        t.increment();
         std::cout << t << std::endl;
     }
 }
 
-void TestIncrementDecrementOperators()
+void testIncrementDecrementOperators()
 {
     // testing increment/decrement operator
     Time t1(0, 0, 12);
@@ -78,7 +78,7 @@ void TestIncrementDecrementOperators()
     std::cout << t2 << std::endl;
 }
 
-void TestConversion()
+void testConversion()
 {
     Time t;
     t = 60 * 60 + 60 + 1;
@@ -86,7 +86,7 @@ void TestConversion()
     std::cout << "Seconds: " << (int)t << std::endl;
 }
 
-void TestInputOutput()
+void testInputOutput()
 {
     Time t;
     std::cin >> t;
@@ -95,14 +95,14 @@ void TestInputOutput()
 
 int main ()
 {
-    TestCtors();
-    TestAdd();
-    TestDiff();
-    TestArithmeticOperators();
-    TestIncrementOperators();
-    TestIncrementDecrementOperators();
-    TestConversion();
-    TestInputOutput();
+    testCtors();
+    testAdd();
+    testDiff();
+    testArithmeticOperators();
+    testIncrementOperators();
+    testIncrementDecrementOperators();
+    testConversion();
+    testInputOutput();
 
     return 0;
 }
@@ -110,6 +110,3 @@ int main ()
 // ===========================================================================
 // End-of-File
 // ===========================================================================
-
-
-

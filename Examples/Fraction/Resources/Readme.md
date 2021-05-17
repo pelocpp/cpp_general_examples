@@ -3,6 +3,17 @@
 ## Einführung
 
 In dieser Übung wollen wir uns der Klasse `Fraction` in einer zusammenfassenden Betrachtung annehmen.
+
+---
+
+*Hinweis*:
+Der Quellcode im Repository zu dieser Übung ist bewußt sehr elementar gehalten.
+Oder um es anders zu formulieren: Viele der syntaktischen Neuerungen von C++ 11/14/17/20
+sind bewußt außer Acht gelassen worden.
+Es ist dem interessierten Leser überlassen, diese Neuerungen einzuarbeiten.
+
+---
+
 Folgenden Eigenschaften sollen in Ihrer Realisierung der Klasse `Fraction` Berücksichtigung finden:
 
   * Objekte der Klasse `Fraction` sollen die von ihr verwaltete rationale Zahl immer in einer
@@ -36,12 +47,6 @@ Folgenden Eigenschaften sollen in Ihrer Realisierung der Klasse `Fraction` Berüc
   * Ein- und Ausgabe: Eine rationale Zahl soll in der Form &ldquo;Zähler / Nenner&ldquo; ausgegeben werden.
     Für Eingaben ist dasselbe Format zu Grunde zu legen. Zwischen den numerischen
     Werten und dem Schrägstrich sind beliebige Leerzeichen und Tabulatoren erlaubt.
-
-*Hinweis*:
-Der Quellcode im Repository zu dieser Übung ist bewußt sehr elementar gehalten.
-Oder um es anders zu formulieren: Viele der syntaktischen Neuerungen von C++ 11/14/17/20
-sind bewußt außer Acht gelassen worden.
-Es ist dem interessierten Leser überlassen, diese Neuerungen einzuarbeiten.
 
 ---
 

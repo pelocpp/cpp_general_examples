@@ -7,6 +7,16 @@ Auskünfte über das Bankkonto können mit Hilfe der Eigenschaften `getNumber` (Kon
 und `getBalance` (Kontostand) eingeholt werden.
 Für Überweisungen von einem Konto auf ein anderes gibt es die Methode `transfer`.
 
+---
+
+Noch ein *Hinweis*:
+Der Quellcode im Repository zu dieser Übung ist bewußt sehr elementar gehalten.
+Oder um es anders zu formulieren: Viele der syntaktischen Neuerungen von C++ 11/14/17/20
+sind bewußt außer Acht gelassen worden.
+Es ist dem interessierten Leser überlassen, diese Neuerungen einzuarbeiten.
+
+---
+
 Da das Abheben eines Betrags offensichtlich abhängig vom Kontotyp ist, bietet es sich an,
 in der Klasse `Account` nur eine abstrakte Vorlage einer `withdrawal`-Methode festzulegen.
 In speziellen Ausprägungen eines Bankkontos wie etwa einem Girokonto oder einem Sparbuch kann man festlegen,

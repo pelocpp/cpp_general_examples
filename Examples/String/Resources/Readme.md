@@ -7,7 +7,17 @@ mit Zeichenketten zum Pflichtbestandteil der Klassenbibliothek eines jeden C++&n
 Da in C++ auch standardisierte Klassenbibliotheken existieren, finden wir die
 gesuchte Klasse &ndash; unter dem Namen `std::string` &ndash; tatsächlich auch in der STL (&ldquo;Standard Template Library&ldqu&;o;) vor.
 Um Übung in der Anwendung der Programmiersprache C++ zu erlangen, beschäftigen wir uns im folgenden mit der Realisierung
-unserer eigenen Klasse String, siehe dazu die Beschreibung der öffentlichen Schnittstelle dieser String-Klasse in *Tabelle* 1.
+unserer eigenen Klasse `String`, siehe dazu die Beschreibung der öffentlichen Schnittstelle dieser String-Klasse in *Tabelle* 1.
+
+---
+
+Und noch ein *Hinweis*:
+Der Quellcode im Repository zu dieser Übung ist bewußt sehr elementar gehalten.
+Oder um es anders zu formulieren: Viele der syntaktischen Neuerungen von C++ 11/14/17/20
+sind bewußt außer Acht gelassen worden.
+Es ist dem interessierten Leser überlassen, diese Neuerungen einzuarbeiten.
+
+---
 
 Bei der Implementierung der Klasse `String` ist der Speicherbereich für die einzelnen Zeichen
 der Zeichenkette dynamisch zu allokieren. Der Einfachheit halber legen wir zusätzlich zu Grunde,
@@ -59,12 +69,6 @@ Zum Testen Ihrer Implementierung schreiben Sie für jede Methode oder zusammengeh
 eine separate Testfunktion. Die Regel &ldquo;weniger ist mehr&rdquo; gilt an dieser Stelle nicht, ganz im Gegenteil:
 Um Änderungen in Ihrer Implementierung auch im Nachhinein seriös praktizieren zu können,
 benötigen Sie einen robusten Testrahmen. Eine sehr ausführliche Anregung dazu finden Sie hier:
-
-Und noch ein *Hinweis*:
-Der Quellcode im Repository zu dieser Übung ist bewußt sehr elementar gehalten.
-Oder um es anders zu formulieren: Viele der syntaktischen Neuerungen von C++ 11/14/17/20
-sind bewußt außer Acht gelassen worden.
-Es ist dem interessierten Leser überlassen, diese Neuerungen einzuarbeiten.
 
 ---
 

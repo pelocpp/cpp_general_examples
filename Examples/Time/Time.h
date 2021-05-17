@@ -19,20 +19,20 @@ public:
     Time(const char*);  // conversion c'tor
 
     // getter // setter
-    int GetSeconds() const { return m_seconds; };
-    int GetMinutes() const { return m_minutes; };
-    int GetHours() const { return m_hours; };
-    void SetSeconds(int seconds);
-    void SetMinutes(int minutes);
-    void SetHours(int hours);
+    int getSeconds() const { return m_seconds; };
+    int getMinutes() const { return m_minutes; };
+    int getHours() const { return m_hours; };
+    void setSeconds(int seconds);
+    void setMinutes(int minutes);
+    void setHours(int hours);
 
     // public interface
-    void Reset();
-    void Add(const Time&);
-    void Sub(const Time&);
-    Time Diff(const Time&) const;
-    void Increment();
-    void Decrement();
+    void reset();
+    void add(const Time&);
+    void sub(const Time&);
+    Time diff(const Time&) const;
+    void increment();
+    void decrement();
 
     // arithmetic operators
     Time operator+ (const Time&) const;
@@ -67,8 +67,8 @@ public:
 
 private:
     // helper methods
-    int TimeToSeconds();
-    void SecondsToTime(int seconds);
+    int timeToSeconds();
+    void secondsToTime(int seconds);
 };
 
 // ===========================================================================

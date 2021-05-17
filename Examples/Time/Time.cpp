@@ -34,7 +34,7 @@ Time::Time(int seconds)     // conversion c'tor
 {
     if (0 <= seconds && seconds <= 24 * 60 * 60)
     {
-        SecondsToTime(seconds);
+        secondsToTime(seconds);
     }
     else
     {
@@ -43,30 +43,30 @@ Time::Time(int seconds)     // conversion c'tor
 }
 
 // getter // setter
-void Time::SetSeconds(int seconds)
+void Time::setSeconds(int seconds)
 {
     m_seconds = (0 <= seconds && seconds < 60) ? seconds : 0;
 }
 
-void Time::SetMinutes(int minutes)
+void Time::setMinutes(int minutes)
 {
     m_minutes = (0 <= minutes && minutes < 60) ? minutes : 0;
 }
 
-void Time::SetHours(int hours)
+void Time::setHours(int hours)
 {
     m_hours = (0 <= hours && hours < 24) ? hours : 0;
 }
 
 // public interface
-void Time::Reset()
+void Time::reset()
 {
     m_seconds = 0;
     m_minutes = 0;
     m_hours = 0;
 }
 
-void Time::Add(const Time & t)
+void Time::add(const Time & t)
 {
     m_seconds += t.m_seconds;
     m_minutes += t.m_minutes;
@@ -80,7 +80,7 @@ void Time::Add(const Time & t)
     m_hours = m_hours % 24;
 }
 
-void Time::Sub(const Time& t)
+void Time::sub(const Time& t)
 {
     int seconds =
         (m_hours * 3600 + m_minutes * 60 + m_seconds) -
@@ -90,10 +90,10 @@ void Time::Sub(const Time& t)
         seconds += 24 * 60 * 60;
 
     // transform total seconds into hours, minutes and seconds
-    SecondsToTime(seconds);
+    secondsToTime(seconds);
 }
 
-Time Time::Diff(const Time& t) const
+Time Time::diff(const Time& t) const
 {
     Time tmp;
     if (*this <= t)
@@ -104,7 +104,7 @@ Time Time::Diff(const Time& t) const
     return tmp;
 }
 
-void Time::Increment()
+void Time::increment()
 {
     m_seconds++;
     if (m_seconds >= 60)
@@ -123,7 +123,7 @@ void Time::Increment()
     }
 }
 
-void Time::Decrement()
+void Time::decrement()
 {
     m_seconds--;
     if (m_seconds < 0)
@@ -146,33 +146,33 @@ void Time::Decrement()
 Time Time::operator+ (const Time & t) const
 {
     Time tmp(*this);
-    tmp.Add(t);
+    tmp.add(t);
     return tmp;
 }
 
 Time Time::operator- (const Time & t) const
 {
     Time tmp(*this);
-    tmp.Sub(t);
+    tmp.sub(t);
     return tmp;
 }
 
 Time Time::operator+= (const Time & t)
 {
-    Add(t);
+    add(t);
     return *this;
 }
 
 Time Time::operator-= (const Time & t)
 {
-    Sub(t);
+    sub(t);
     return *this;
 }
 
 Time Time::operator+= (int seconds)
 {
     for (int i = 0; i < seconds; i++)
-        Increment();
+        increment();
 
     return *this;
 }
@@ -180,7 +180,7 @@ Time Time::operator+= (int seconds)
 Time Time::operator-= (int seconds)
 {
     for (int i = 0; i < seconds; i++)
-        Decrement();
+        decrement();
 
     return *this;
 }
@@ -261,7 +261,7 @@ bool operator>  (const Time & t1, const Time & t2)
 // conversion operator
 Time::operator int()
 {
-    return TimeToSeconds();
+    return timeToSeconds();
 }
 
 // input / output
@@ -287,12 +287,12 @@ std::ostream & operator<< (std::ostream & os, const Time & t)
 }
 
 // helper methods
-int Time::TimeToSeconds()
+int Time::timeToSeconds()
 {
     return m_hours * 3600 + m_minutes * 60 + m_seconds;
 }
 
-void Time::SecondsToTime(int seconds)
+void Time::secondsToTime(int seconds)
 {
     m_hours = seconds / 3600;
     seconds = seconds % 3600;

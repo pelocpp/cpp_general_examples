@@ -114,6 +114,17 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
+#### [Klasse *Time*](Examples/Time/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
+  * Zugriffsrechte (`private`, `public`)
+  * Überladen von Operatoren
+  * `friend`-Mechanismus
+  * getter/setter-Methoden
+
+---
+
 #### [Klasse *Fraction*](Examples/Fraction/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
