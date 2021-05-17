@@ -40,6 +40,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fraction", "Examples\Fracti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String", "Examples\String\String.vcxproj", "{EDD65498-1A76-4104-88A7-FDAE6D994954}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Time", "Examples\Time\Time.vcxproj", "{D2EDAE18-29E8-45B4-A212-1B463862782B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -176,6 +178,14 @@ Global
 		{EDD65498-1A76-4104-88A7-FDAE6D994954}.Release|x64.Build.0 = Release|x64
 		{EDD65498-1A76-4104-88A7-FDAE6D994954}.Release|x86.ActiveCfg = Release|Win32
 		{EDD65498-1A76-4104-88A7-FDAE6D994954}.Release|x86.Build.0 = Release|Win32
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Debug|x64.ActiveCfg = Debug|x64
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Debug|x64.Build.0 = Debug|x64
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Debug|x86.Build.0 = Debug|Win32
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Release|x64.ActiveCfg = Release|x64
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Release|x64.Build.0 = Release|x64
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Release|x86.ActiveCfg = Release|Win32
+		{D2EDAE18-29E8-45B4-A212-1B463862782B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
