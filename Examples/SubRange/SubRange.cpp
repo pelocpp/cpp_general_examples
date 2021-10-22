@@ -15,15 +15,13 @@ namespace SubRangeClassic {
         int m_value;
 
         void check(int value) {
-            std::cerr << "calling check ..." << std::endl;
+            std::cout << "calling check ..." << std::endl;
             if (value < m_min || value > m_max) {
                 throw std::out_of_range("value not within range!");
             }
         }
 
     public:
-        SubRange() = delete;
-
         SubRange(int value, int min, int max) : m_min(min), m_max(max) {
             check(value);
             m_value = value;
@@ -55,20 +53,19 @@ namespace SubRangeClassic {
 
     void test_01_classic() {
 
-        SubRange range1(10, 5, 20);
-        SubRange range2(25, 15, 30);
-        SubRange range3(8, 1, 10);
+        SubRange range1(10,  5, 20);
+        SubRange range2(8,   7, 18);  // range2 'partial set' of range1
+        SubRange range3(15,  5, 20);  // range3 and range1 same limits
+        SubRange range4(25, 15, 30);  // range4 not 'partial set' of range1
 
         // testing assignment
-        std::cerr << range1 << std::endl;
+        std::cout << range1 << std::endl;
+        range1 = range2;
+        std::cout << range1 << std::endl;
         range1 = range3;
-        std::cerr << range1 << std::endl;
-        // range1 = range2;
-        std::cerr << range1 << std::endl;
-
-        // testing copy-c'tor
-        SubRange range5(20, 10, 30);
-        SubRange range6 = range5;
+        std::cout << range1 << std::endl;
+        range1 = range4;
+        std::cout << range1 << std::endl;
     }
 }
 
@@ -80,15 +77,13 @@ namespace SubRangeWithTemplate {
         int m_value;
 
         void check(int value) {
-            std::cerr << "calling check ..." << std::endl;
+            std::cout << "calling check ..." << std::endl;
             if (value < MIN || value > MAX) {
                 throw std::out_of_range("value not within range!");
             }
         }
 
     public:
-        SubRange() = delete;
-
         SubRange(int value) {
             check(value);
             m_value = value;
@@ -112,21 +107,16 @@ namespace SubRangeWithTemplate {
     void test_02_template() {
 
         SubRange<5, 20>  range1(10);
-        SubRange<15, 30> range2(25);
-        SubRange<1, 10>  range3(8);
-        SubRange<5, 20>  range4(15);
+        SubRange<7, 18>  range2(8);   // range2 'partial set' of range1
+        SubRange<5, 20>  range3(15);  // range3 and range1 same limits
+        SubRange<15, 30> range4(25);  // range4 not 'partial set' of range1
 
         // testing assignment
-        std::cerr << range1 << std::endl;
-        // range1 = range2;
-        // range1 = range3;
-        range1 = range4;
-        std::cerr << range1 << std::endl;
-
-        // testing copy-c'tor
-        SubRange<15, 25> range5(20);
-        // SubRange<10, 20> range6 = range5;
-        SubRange<15, 25> range7 = range5;
+        std::cout << range1 << std::endl;
+        //range1 = range2;                      // doesn't compile
+        range1 = range3;                        // compiles (!)
+        std::cout << range1 << std::endl;
+        //range1 = range4;                      // doesn't compile
     }
 }
 
@@ -140,7 +130,7 @@ namespace SubRangeWithMetaProgramming {
     template <> 
     inline void check<true> (int value, int min, int max)
     {
-        std::cerr << "calling check ..." << std::endl;
+        std::cout << "calling check ..." << std::endl;
         if (value < min || value > max) {
             throw std::out_of_range("value not within range!");
         }
@@ -160,8 +150,6 @@ namespace SubRangeWithMetaProgramming {
         int m_value;
 
     public:
-        SubRange() = delete;
-
         SubRange(int value) {
             check<true>(value, MIN, MAX);
             m_value = value;
@@ -171,18 +159,30 @@ namespace SubRangeWithMetaProgramming {
         SubRange(SubRange<MIN_OTHER, MAX_OTHER> const& other)
         {
             check< (MIN_OTHER < MIN || MAX_OTHER > MAX) >(other.m_value, MIN, MAX);
+            m_value = other.m_value;
+
             // or - without friend declaration
             // check< (MIN_OTHER < MIN || MAX_OTHER > MAX) >(other.getValue(), MIN, MAX);
-            m_value = other.getValue();
+            // m_value = other.getValue();
         }
 
+        // assignment operator - for subranges with same limits - just copy value, not limits
+        SubRange& operator= (SubRange const& other) {
+            // check not necessary (!)
+            m_value = other.m_value;
+            return *this;
+        }
+
+        // template member method - for different subranges
         template <int MIN_OTHER, int MAX_OTHER>
         SubRange& operator=(SubRange<MIN_OTHER, MAX_OTHER> const& other)
         {
             check< (MIN_OTHER < MIN || MAX_OTHER > MAX) >(other.m_value, MIN, MAX);
+            m_value = other.m_value;
+
             // or - without friend declaration
-            //check< (MIN_OTHER < MIN || MAX_OTHER > MAX) >(other.getValue(), MIN, MAX);
-            m_value = other.getValue();
+            // check< (MIN_OTHER < MIN || MAX_OTHER > MAX) >(other.getValue(), MIN, MAX);
+            // m_value = other.getValue();
             return *this;
         }
 
@@ -199,34 +199,31 @@ namespace SubRangeWithMetaProgramming {
 
     void test_03_metaprogramming() {
 
-        SubRange<10, 20> range1(15);
-        SubRange<11, 19> range2(16);
-        SubRange<15, 25> range3(25);
-        SubRange<10, 20> range4(16);
+        SubRange<5, 20>  range1(10);
+        SubRange<7, 18>  range2(8);   // range2 'partial set' of range1
+        SubRange<5, 20>  range3(15);  // range3 and range1 same limits
+        SubRange<15, 30> range4(25);  // range4 not 'partial set' of range1
 
         // testing assignment
-        std::cerr << range1 << std::endl;
+        std::cout << range1 << std::endl;
         range1 = range2;
-        std::cerr << range1 << std::endl;
-        // range1 = range3;  // cannot be assigned
-        std::cerr << range1 << std::endl;
+        std::cout << range1 << std::endl;
+        range1 = range3;
+        std::cout << range1 << std::endl;
         range1 = range4;
-        std::cerr << range1 << std::endl;
-
-        // testing copy-c'tor
-        SubRange<15, 25> range5(20);
-        SubRange<10, 20> range6 = range5;
+        std::cout << range1 << std::endl;
     }
 }
 
 void main_function_subrange()
 {
     using namespace SubRangeClassic;
-    // using namespace SubRangeWithTemplate;
-    // using namespace SubRangeWithMetaProgramming;
+    using namespace SubRangeWithTemplate;
+    using namespace SubRangeWithMetaProgramming;
+
     test_01_classic();
-    // test_02_template();
-    // test_03_metaprogramming();
+    test_02_template();
+    test_03_metaprogramming();
 }
 
 // =====================================================================================
