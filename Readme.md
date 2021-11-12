@@ -46,7 +46,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Klasse `Phonebook`](Examples/Phonebook/Resources/Readme.md)
+#### [Klasse `Phonebook`](Examples/PhoneBook/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Entwicklung einer Anwendung mit STL-Container (`std::vector`)
