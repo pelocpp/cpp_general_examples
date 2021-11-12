@@ -11,6 +11,7 @@
 #include <sstream>
 
 #include "Contact.h"
+#include "IPhoneBook.h"
 #include "PhoneBook.h"
 
 // ===========================================================================
@@ -203,8 +204,11 @@ std::string Phonebook::toString()
     return result;
 }
 
-void Phonebook::import(const Phonebook& book)
+void Phonebook::import(const IPhonebook& ibook)
 {
+    // need access to underlying 'm_vec' object
+    const Phonebook& book = dynamic_cast<const Phonebook&>(ibook);
+
     std::for_each(
         book.m_vec.begin(),
         book.m_vec.end(),

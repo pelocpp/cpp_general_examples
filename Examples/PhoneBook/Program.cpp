@@ -11,13 +11,18 @@
 #include <sstream>
 
 #include "Contact.h"
+#include "IPhoneBook.h"
 #include "PhoneBook.h"
 
 // function prototypes
 void main_phonebook_01();
-//void main_phonebook_02();
-//void main_phonebook_03();
-//void main_phonebook_04();
+void main_phonebook_02();
+void main_phonebook_03();
+void main_phonebook_04();
+void main_phonebook_05();
+void main_phonebook_06();
+void main_phonebook_07();
+void main_phonebook_08();
 
 void initPhoneBook(Phonebook& book)
 {
@@ -153,18 +158,18 @@ void main_phonebook_08()
 
 int main()
 {
-    //main_phonebook_01();
-    //main_phonebook_02();
-    //main_phonebook_03();
-    //main_phonebook_04();
-    //main_phonebook_05();
-    //main_phonebook_06();
-    //main_phonebook_07();
+    main_phonebook_01();
+    main_phonebook_02();
+    main_phonebook_03();
+    main_phonebook_04();
+    main_phonebook_05();
+    main_phonebook_06();
+    main_phonebook_07();
     main_phonebook_08();
+
     return 0;
 }
 
 // ===========================================================================
 // End-of-File
 // ===========================================================================
-

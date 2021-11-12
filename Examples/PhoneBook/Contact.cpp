@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "Contact.h"
+#include "IPhoneBook.h"
 #include "PhoneBook.h"
 
 std::ostream& operator<< (std::ostream& os, const Contact& contact) {

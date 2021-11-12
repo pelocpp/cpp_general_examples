@@ -49,9 +49,11 @@ Folgende Aspekte werden betrachtet:
 #### [Klasse `Phonebook`](Examples/PhoneBook/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
-  * Entwicklung einer Anwendung mit STL-Container (`std::vector`)
+  * Entwicklung einer Anwendung mit der STL (*Standard Template Library*)
+  * Anwendung elementarer STL-Container (`std::vector`)
   * Anwendung elementarer STL Algorithmen (`std::find_if`, `std::copy_if`, `std::remove_if`, `std::sort`, `std::accumulate`, `std::for_each`)
-  * Funktoren
+  * Das Iteratoren-Konzept (Methode `import`)
+  * Einsatz von Funktoren (*Callable Objects*)
   * Klasse `std::ostringstream`
   * Sortieren (`std::sort`)
   * Definition einer Schnittstelle (`IPhoneBook`)

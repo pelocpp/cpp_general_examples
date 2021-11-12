@@ -4,7 +4,7 @@
 
 #pragma once
 
-class Phonebook
+class Phonebook : public IPhonebook
 {
 private:
     std::vector<Contact> m_vec;
@@ -86,17 +86,17 @@ private:
 
 public:
     // public interface
-    size_t size();
-    bool insert(const std::string& firstName, const std::string& lastName, long number);
-    bool insert(const Contact&);
-    bool contains(const std::string& firstName, const std::string& lastName);
-    bool find(const std::string& firstName, const std::string& lastName, long& number);
-    std::vector<Contact> findAll(const std::string& lastName);
-    bool remove(const std::string& firstName, const std::string& lastName, long number);
-    bool update(const std::string& firstName, const std::string& lastName, long number);
-    void import(const Phonebook& book);
-    std::string toString();
-    void sort();
+    virtual size_t size() override;
+    virtual bool insert(const std::string& firstName, const std::string& lastName, long number) override;
+    virtual bool insert(const Contact&) override;
+    virtual bool contains(const std::string& firstName, const std::string& lastName) override;
+    virtual bool find(const std::string& firstName, const std::string& lastName, long& number) override;
+    virtual std::vector<Contact> findAll(const std::string& lastName) override;
+    virtual bool remove(const std::string& firstName, const std::string& lastName, long number) override;
+    virtual bool update(const std::string& firstName, const std::string& lastName, long number) override;
+    virtual void import(const IPhonebook& book) override;
+    virtual std::string toString() override;
+    virtual void sort() override;
 
     friend std::ostream& operator<<(std::ostream&, const Phonebook&);
 };
