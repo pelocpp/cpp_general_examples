@@ -142,11 +142,13 @@
     <None Include="Resources\Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IPhoneBook.cpp" />
+    <ClCompile Include="Contact.cpp" />
     <ClCompile Include="PhoneBook.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Contact.h" />
+    <ClInclude Include="IPhonebook.h" />
     <ClInclude Include="PhoneBook.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

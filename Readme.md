@@ -50,11 +50,11 @@ Folgende Aspekte werden betrachtet:
 
 Folgende Aspekte werden betrachtet:
   * Entwicklung einer Anwendung mit STL-Container (`std::vector`)
-  * Zusammenspiel von `std::vector`-Objekt und Einträgen vom Typ `std::unique_ptr`
-  * Anwendung von `std::move`
-  * Dateiein- und -ausgabe (`std::ofstream` und `std::ifstream`)
-  * Lambda-Funktionen
+  * Anwendung elementarer STL Algorithmen (`std::find_if`, `std::copy_if`, `std::remove_if`, `std::sort`, `std::accumulate`, `std::for_each`)
+  * Funktoren
+  * Klasse `std::ostringstream`
   * Sortieren (`std::sort`)
+  * Definition einer Schnittstelle (`IPhoneBook`)
 
 ---
 

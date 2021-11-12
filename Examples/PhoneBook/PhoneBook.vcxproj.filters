@@ -26,12 +26,18 @@
     <ClCompile Include="PhoneBook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IPhoneBook.cpp">
+    <ClCompile Include="Contact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PhoneBook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Contact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPhonebook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
