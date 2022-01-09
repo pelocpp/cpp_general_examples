@@ -7,6 +7,7 @@
 // Realisierung angelehnt an
 // "C++ Templates: The Complete Guide (2nd Edition)" von
 // David Vandevoorde, Nicolai M. Josuttis und Douglas Gregor
+// Seite 577 ff.
 // ===========================================================================
 
 #include <iostream>
@@ -15,68 +16,81 @@
 namespace CustomTuple {
 
     template<typename... Types>
-    class Tuple;
+    class MyTuple;
 
-    // recursive case:
+    // recursive case
     template<typename Head, typename... Tail>
-    class Tuple<Head, Tail...>
+    class MyTuple<Head, Tail...>
     {
     private:
-        Head head;
-        Tuple<Tail...> tail;
+        Head m_head;
+        MyTuple<Tail...> m_tail;
+
     public:
-        // constructors:
-        Tuple() {
-        }
-        Tuple(Head const& head, Tuple<Tail...> const& tail)
-            : head(head), tail(tail) {
+        // c'tors
+        MyTuple() {}
+
+        MyTuple(const Head& head, const MyTuple<Tail...>& tail)
+            : m_head(head), m_tail(tail) {
         }
 
-        Tuple(Head&& head, Tail&&... tail) :
-            head(std::forward<Head>(head)),
-            tail(std::forward<Tail>(tail)...) {
+        MyTuple(Head&& head, Tail&&... tail) :
+            m_head(std::forward<Head>(head)),
+            m_tail(std::forward<Tail>(tail)...) {
         }
 
-        Head& getHead() { return head; }
-        Head const& getHead() const { return head; }
-        Tuple<Tail...>& getTail() { return tail; }
-        Tuple<Tail...> const& getTail() const { return tail; }
+        // getter / setter
+        Head& getHead() { 
+            return m_head;
+        }
+
+        const Head& getHead() const {
+            return m_head; 
+        }
+
+        MyTuple<Tail...>& getTail() {
+            return m_tail;
+        }
+
+        const MyTuple<Tail...>& getTail() const {
+            return m_tail; 
+        }
     };
 
-    // basis case:
+    // basis case
     template<>
-    class Tuple<> {
-        // no storage required
-    };
+    class MyTuple<> {};
+
+    // --------------------------------------------------------
 
     template<unsigned N>
-    struct TupleGet {
+    struct MyTupleGet {
         template<typename Head, typename... Tail>
-        static auto apply(Tuple<Head, Tail...> const& t) {
-            return TupleGet<N - 1>::apply(t.getTail());
+        static auto apply(const MyTuple<Head, Tail...>& t) {
+            return MyTupleGet<N - 1>::apply(t.getTail());
         }
     };
 
     // basis case:
     template<>
-    struct TupleGet<0> {
+    struct MyTupleGet<0> {
         template<typename Head, typename... Tail>
-        static Head const& apply(Tuple<Head, Tail...> const& t) {
+        static const Head& apply(const MyTuple<Head, Tail...>& t) {
             return t.getHead();
         }
     };
 
     template<unsigned N, typename... Types>
-    auto get(Tuple<Types...> const& t) {
-        return TupleGet<N>::apply(t);
+    auto get(const MyTuple<Types...>& t) {
+        return MyTupleGet<N>::apply(t);
     }
 }
 
-void main_mytuple()
+void main_mytuple_01()
 {
     using namespace CustomTuple;
 
-    Tuple<int, double, std::string> aTuple (123, 99.99, std::string("ABCDE"));
+    MyTuple<int, double, std::string> aTuple (123, 99.99, std::string("ABCDE"));
 
     int n = get<0>(aTuple);
     std::cout << "n = " << n << std::endl;
@@ -88,7 +102,28 @@ void main_mytuple()
     std::cout << "s = " << s << std::endl;
 }
 
+void main_mytuple_02()
+{
+    using namespace CustomTuple;
+
+    MyTuple<int, double, std::string> aTuple(123, 99.99, std::string("ABCDE"));
+
+    int n = get<0, int, double, std::string>(aTuple);
+    std::cout << "n = " << n << std::endl;
+
+    double d = get<1, int, double, std::string>(aTuple);
+    std::cout << "d = " << d << std::endl;
+
+    std::string s = get<2, int, double, std::string>(aTuple);
+    std::cout << "s = " << s << std::endl;
+}
+
+void main_mytuple()
+{
+    main_mytuple_01();
+    main_mytuple_02();
+}
+
 // ===========================================================================
 // End-of-File
 // ===========================================================================
-

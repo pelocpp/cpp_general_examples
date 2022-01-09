@@ -14,11 +14,11 @@
 namespace AlternateCustomTuple {
 
     template <class... Ts>
-    struct Tuple {};
+    struct MyTuple {};
 
     template <class T, class... Ts>
-    struct Tuple<T, Ts...> : Tuple<Ts...> {
-        Tuple(T t, Ts... ts) : Tuple<Ts...>(ts...), tail(t) {}
+    struct MyTuple<T, Ts...> : MyTuple<Ts...> {
+        MyTuple(T t, Ts... ts) : MyTuple<Ts...>(ts...), tail(t) {}
 
         T tail;
     };
@@ -27,36 +27,36 @@ namespace AlternateCustomTuple {
     struct TypeHolder;
 
     template <class T, class... Ts>
-    struct TypeHolder<0, Tuple<T, Ts...>> {
+    struct TypeHolder<0, MyTuple<T, Ts...>> {
         using type = T;
     };
 
     template <size_t k, class T, class... Ts>
-    struct TypeHolder<k, Tuple<T, Ts...>> {
-        using type = typename TypeHolder<k - 1, Tuple<Ts...>>::type;
+    struct TypeHolder<k, MyTuple<T, Ts...>> {
+        using type = typename TypeHolder<k - 1, MyTuple<Ts...>>::type;
     };
 
     template <size_t k, class... Ts>
     typename std::enable_if<
-        k == 0, typename TypeHolder<0, Tuple<Ts...>>::type&>::type
-        get(Tuple<Ts...>& t) {
+        k == 0, typename TypeHolder<0, MyTuple<Ts...>>::type&>::type
+        get(MyTuple<Ts...>& t) {
         return t.tail;
     }
 
     template <size_t k, class T, class... Ts>
     typename std::enable_if<
-        k != 0, typename TypeHolder<k, Tuple<T, Ts...>>::type&>::type
-        get(Tuple<T, Ts...>& t) {
-        Tuple<Ts...>& base = t;
+        k != 0, typename TypeHolder<k, MyTuple<T, Ts...>>::type&>::type
+        get(MyTuple<T, Ts...>& t) {
+        MyTuple<Ts...>& base = t;
         return get<k - 1>(base);
     }
 }
 
-void main_mytuple_alternate()
+void main_mytuple_alternate_01()
 {
     using namespace AlternateCustomTuple;
 
-    Tuple<int, double, std::string> aTuple (123, 99.99, std::string("ABCDE"));
+    MyTuple<int, double, std::string> aTuple(123, 99.99, std::string("ABCDE"));
 
     int n = get<0>(aTuple);
     std::cout << "n = " << n << std::endl;
@@ -66,6 +66,28 @@ void main_mytuple_alternate()
 
     std::string s = get<2>(aTuple);
     std::cout << "s = " << s << std::endl;
+}
+
+void main_mytuple_alternate_02()
+{
+    using namespace AlternateCustomTuple;
+
+    MyTuple<int, double, std::string> aTuple(123, 99.99, std::string("ABCDE"));
+
+    int n = get<0, int, double, std::string>(aTuple);
+    std::cout << "n = " << n << std::endl;
+
+    double d = get<1, int, double, std::string>(aTuple);
+    std::cout << "d = " << d << std::endl;
+
+    std::string s = get<2, int, double, std::string>(aTuple);
+    std::cout << "s = " << s << std::endl;
+}
+
+void main_mytuple_alternate()
+{
+    main_mytuple_alternate_01();
+    main_mytuple_alternate_02();
 }
 
 // ===========================================================================
