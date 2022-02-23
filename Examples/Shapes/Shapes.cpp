@@ -10,28 +10,32 @@ namespace Shapes {
 
     constexpr bool isLoggingActive = false;
 
-    Shape::Shape(const std::string& name) {
+    Shape::Shape(const std::string& name) : m_name(name)
+    {
         if (isLoggingActive) {
             std::cerr << "c'tor Shape" << std::endl;
         }
-        m_name = name;
     }
 
-    Shape::~Shape() {
+    Shape::~Shape()
+    {
         if (isLoggingActive) {
             std::cerr << "d'tor Shape" << std::endl;
         }
     }
 
-    std::string Shape::version() {
+    std::string Shape::version()
+    {
         return "1.00";
     }
    
-    void Shape::draw(std::ostream& os) {
+    void Shape::draw(std::ostream& os)
+    {
         os << "Shape: " << m_name << std::endl;
     }
 
-    std::ostream& operator<< (std::ostream& os, const Shape& s) {
+    std::ostream& operator<< (std::ostream& os, const Shape& s)
+    {
         os << "Shape: " << s.m_name;
         return os;
     }
@@ -39,33 +43,36 @@ namespace Shapes {
     // ===========================================================================
 
     TwoDimensional::TwoDimensional(const std::string& name, double x, double y)
-        : Shape(name) {
+        : Shape(name), m_x(x), m_y(y)
+    {
         if (isLoggingActive) {
             std::cerr << "  c'tor TwoDimensional" << std::endl;
         }
-        m_x = x;
-        m_y = y;
     }
 
-    TwoDimensional::~TwoDimensional() {
+    TwoDimensional::~TwoDimensional()
+    {
         if (isLoggingActive) {
             std::cerr << "  d'tor TwoDimensional" << std::endl;
         }
     }
 
-    void TwoDimensional::draw(std::ostream& os) {
+    void TwoDimensional::draw(std::ostream& os)
+    {
         Shape::draw(os);
         os << "  TwoDimensional" << std::endl;
         os << "  Position: " << std::fixed << std::setprecision(2) 
             << m_x << ", " << m_y << std::endl;
     }
 
-    void TwoDimensional::moveTo(double x, double y) {
+    void TwoDimensional::moveTo(double x, double y)
+    {
         m_x = x;
         m_y = y;
     }
 
-    std::ostream& operator<< (std::ostream& os, const TwoDimensional& td) {
+    std::ostream& operator<< (std::ostream& os, const TwoDimensional& td)
+    {
         os << (Shape&)td << std::endl;
         os << "  TwoDimensional" << std::endl;
         os << "  Position: " << std::fixed << std::setprecision(2) 
@@ -76,39 +83,39 @@ namespace Shapes {
     // ===========================================================================
 
     ThreeDimensional::ThreeDimensional(
-        const std::string& name, 
-        double x, 
-        double y, 
-        double z)
-        : Shape(name) {
+        const std::string& name, double x, double y, double z
+    ) 
+        : Shape(name), m_x(x), m_y(y), m_z(z)
+    {
         if (isLoggingActive) {
             std::cerr << "  c'tor ThreeDimensional" << std::endl;
         }
-        m_x = x;
-        m_y = y;
-        m_z = z;
     }
 
-    ThreeDimensional::~ThreeDimensional() {
+    ThreeDimensional::~ThreeDimensional()
+    {
         if (isLoggingActive) {
             std::cerr << "  d'tor ThreeDimensional" << std::endl;
         }
     }
 
-    void ThreeDimensional::draw(std::ostream& os)  {
+    void ThreeDimensional::draw(std::ostream& os)
+    {
         Shape::draw(os);
         os << "  ThreeDimensional" << std::endl;
         os << "  Position: " << std::fixed << std::setprecision(2)
             << m_x << ", " << m_y << ", " << m_z << std::endl;
     }
 
-    void ThreeDimensional::moveTo(double x, double y, double z) {
+    void ThreeDimensional::moveTo(double x, double y, double z)
+    {
         m_x = x;
         m_y = y;
         m_z = z;
     }
 
-    std::ostream& operator<< (std::ostream& os, const ThreeDimensional& td) {
+    std::ostream& operator<< (std::ostream& os, const ThreeDimensional& td)
+    {
         os << (Shape&)td << std::endl;
         os << "  ThreeDimensional" << std::endl;
         os << "  Position: " << std::fixed << std::setprecision(2)
@@ -121,19 +128,17 @@ namespace Shapes {
     Triangle::Triangle() : Triangle(0, 0, 0, 0, 0) {}
 
     Triangle::Triangle(double x, double y, double a, double b, double c)
-        : TwoDimensional("Triangle", x, y) {
-        m_a = a;
-        m_b = b;
-        m_c = c;
-    }
+        : TwoDimensional("Triangle", x, y), m_a(a), m_b(b), m_c(c) {}
 
-    Triangle::~Triangle() {
+    Triangle::~Triangle()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Triangle" << std::endl;
         }
     }
 
-    void Triangle::draw(std::ostream& os) {
+    void Triangle::draw(std::ostream& os)
+    {
         TwoDimensional::draw(os);
         os << std::fixed;
         os << "    A: " << std::setprecision(2) << m_a << std::endl;
@@ -144,17 +149,20 @@ namespace Shapes {
             << circumference() << std::endl;
     }
 
-    double Triangle::area() const {
+    double Triangle::area() const
+    {
         return sqrt(((4 * m_a * m_a * m_c * m_c) -
             (m_a * m_a + m_c * m_c - m_b * m_b) *
             (m_a * m_a + m_c * m_c - m_b * m_b)) / 16.0);
     }
 
-    double Triangle::circumference() const {
+    double Triangle::circumference() const
+    {
         return m_a + m_b + m_c;
     }
 
-    std::ostream& operator<< (std::ostream& os, const Triangle& t) {
+    std::ostream& operator<< (std::ostream& os, const Triangle& t)
+    {
         os << (TwoDimensional&)t << std::endl;
         os << std::fixed;
         os << "    A: " << std::setprecision(2) << t.m_a << std::endl;
@@ -171,18 +179,17 @@ namespace Shapes {
     Rectangle::Rectangle() : Rectangle(0, 0, 0, 0) {}
 
     Rectangle::Rectangle(double x, double y, double width, double height)
-        : TwoDimensional("Rectangle", x, y) {
-        m_width = width;
-        m_height = height;
-    }
+        : TwoDimensional("Rectangle", x, y), m_width(width), m_height(height) {}
 
-    Rectangle::~Rectangle() {
+    Rectangle::~Rectangle()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Rectangle" << std::endl;
         }
     }
 
-    void Rectangle::draw(std::ostream& os) {
+    void Rectangle::draw(std::ostream& os)
+    {
         TwoDimensional::draw(os);
         os << std::fixed;
         os << "    Width: " << std::setprecision(2) << m_width << std::endl;
@@ -192,15 +199,18 @@ namespace Shapes {
             << circumference() << std::endl;
     }
 
-    double Rectangle::area() const {
+    double Rectangle::area() const
+    {
         return m_width * m_height;
     }
 
-    double Rectangle::circumference() const {
+    double Rectangle::circumference() const
+    {
         return 2 * (m_width + m_height);
     }
 
-    std::ostream& operator<< (std::ostream& os, const Rectangle& r) {
+    std::ostream& operator<< (std::ostream& os, const Rectangle& r)
+    {
         os << (TwoDimensional&)r << std::endl;
         os << std::fixed;
         os << "    Width: " << std::setprecision(2) << r.m_width << std::endl;
@@ -215,30 +225,33 @@ namespace Shapes {
 
     Circle::Circle() : Circle(0, 0, 0) {}
 
-    Circle::Circle(double x, double y, double r)
-        : TwoDimensional("Circle", x, y) {
-        m_radius = r;
-    }
+    Circle::Circle(double x, double y, double radius)
+        : TwoDimensional("Circle", x, y), m_radius(radius) {}
 
-    Circle::~Circle() {
+    Circle::~Circle()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Circle" << std::endl;
         }
     }
 
-    void Circle::draw(std::ostream& os) {
+    void Circle::draw(std::ostream& os)
+    {
         TwoDimensional::draw(os);
     }
 
-    double Circle::area() const {
+    double Circle::area() const
+    {
         return m_radius * m_radius * acos(-1);
     }
 
-    double Circle::circumference() const {
+    double Circle::circumference() const
+    {
         return 2 * acos(-1) * m_radius;
     }
 
-    std::ostream& operator<< (std::ostream& os, const Circle& c) {
+    std::ostream& operator<< (std::ostream& os, const Circle& c)
+    {
         os << (TwoDimensional&)c << std::endl;
         os << std::fixed;
         os << "    Radius: " << std::setprecision(2) << c.m_radius << std::endl;
@@ -253,17 +266,17 @@ namespace Shapes {
     Cube::Cube() : Cube(0, 0, 0, 0) {}
 
     Cube::Cube(double x, double y, double z, double size)
-        : ThreeDimensional("Cube", x, y, z) {
-        m_size = size;
-    }
+        : ThreeDimensional("Cube", x, y, z), m_size(size) {}
 
-    Cube::~Cube() {
+    Cube::~Cube()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Cube" << std::endl;
         }
     }
 
-    void Cube::draw(std::ostream& os) {
+    void Cube::draw(std::ostream& os)
+    {
         ThreeDimensional::draw(os);
         os << std::fixed;
         os << "    Size: " << std::setprecision(2) << m_size << std::endl;
@@ -271,15 +284,18 @@ namespace Shapes {
         os << "    Surface: " << std::setprecision(2) << surface() << std::endl;
     }
 
-    double Cube::volume() const {
+    double Cube::volume() const
+    {
         return m_size * m_size * m_size;
     }
 
-    double Cube::surface() const {
+    double Cube::surface() const
+    {
         return 6 * m_size * m_size;
     }
 
-    std::ostream& operator<< (std::ostream& os, const Cube& c) {
+    std::ostream& operator<< (std::ostream& os, const Cube& c)
+    {
         os << (ThreeDimensional&)c << std::endl;
         os << std::fixed;
         os << "    Size: " << std::setprecision(2) << c.m_size << std::endl;
@@ -292,26 +308,19 @@ namespace Shapes {
 
     Cuboid::Cuboid() : Cuboid(0, 0, 0, 0, 0, 0) {}
 
-    Cuboid::Cuboid(
-        double x,
-        double y, 
-        double z,
-        double width,
-        double height, 
-        double depth)
-        : ThreeDimensional("Cuboid", x, y, z) {
-        m_width = width;
-        m_height = height;
-        m_depth = depth;
-    }
+    Cuboid::Cuboid(double x, double y, double z, double width, double height, double depth
+    )
+    : ThreeDimensional("Cuboid", x, y, z), m_width(width), m_height (height), m_depth(depth) {}
 
-    Cuboid::~Cuboid() {
+    Cuboid::~Cuboid()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Cuboid" << std::endl;
         }
     }
 
-    void Cuboid::draw(std::ostream& os) {
+    void Cuboid::draw(std::ostream& os)
+    {
         ThreeDimensional::draw(os);
         os << std::fixed;
         os << "    Width: " << std::setprecision(2) << m_width << std::endl;
@@ -321,15 +330,18 @@ namespace Shapes {
         os << "    Surface: " << std::setprecision(2) << surface() << std::endl;
     }
 
-    double Cuboid::volume() const {
+    double Cuboid::volume() const
+    {
         return m_width * m_height * m_depth;
     }
 
-    double Cuboid::surface() const {
+    double Cuboid::surface() const
+    {
         return 2 * (m_width * m_height + m_height * m_depth + m_width * m_depth);
     }
 
-    std::ostream& operator<< (std::ostream& os, const Cuboid& c) {
+    std::ostream& operator<< (std::ostream& os, const Cuboid& c)
+    {
         os << (ThreeDimensional&)c << std::endl;
         os << std::fixed;
         os << "    Width: " << std::setprecision(2) << c.m_width << std::endl;
@@ -344,18 +356,18 @@ namespace Shapes {
 
     Sphere::Sphere() : Sphere(0, 0, 0, 0) {}
 
-    Sphere::Sphere(double x, double y, double z, double r)
-        : ThreeDimensional("Sphere", x, y, z) {
-        m_radius = r;
-    }
+    Sphere::Sphere(double x, double y, double z, double radius)
+        : ThreeDimensional("Sphere", x, y, z), m_radius(radius) {}
 
-    Sphere::~Sphere() {
+    Sphere::~Sphere()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Sphere" << std::endl;
         }
     }
 
-    void Sphere::draw(std::ostream& os) {
+    void Sphere::draw(std::ostream& os)
+    {
         ThreeDimensional::draw(os);
         os << std::fixed;
         os << "    Radius: " << std::setprecision(2) << m_radius << std::endl;
@@ -363,15 +375,18 @@ namespace Shapes {
         os << "    Surface: " << std::setprecision(2) << surface() << std::endl;
     }
 
-    double Sphere::volume() const {
+    double Sphere::volume() const
+    {
         return (4.0 / 3.0) * acos(-1) * m_radius * m_radius * m_radius;
     }
 
-    double Sphere::surface() const {
+    double Sphere::surface() const
+    {
         return 4 * acos(-1) * m_radius * m_radius;
     }
 
-    std::ostream& operator<< (std::ostream& os, const Sphere& s) {
+    std::ostream& operator<< (std::ostream& os, const Sphere& s)
+    {
         os << (ThreeDimensional&)s << std::endl;
         os << std::fixed;
         os << "    Radius: " << std::setprecision(2) << s.m_radius << std::endl;
@@ -385,18 +400,17 @@ namespace Shapes {
     Cone::Cone() : Cone(0, 0, 0, 0, 0) {}
 
     Cone::Cone(double x, double y, double z, double radius, double height)
-        : ThreeDimensional("Cone", x, y, z) {
-        m_radius = radius;
-        m_height = height;
-    }
+        : ThreeDimensional("Cone", x, y, z), m_radius(radius), m_height(height) {}
 
-    Cone::~Cone() {
+    Cone::~Cone()
+    {
         if (isLoggingActive) {
             std::cerr << "    d'tor Cone" << std::endl;
         }
     }
 
-    void Cone::draw(std::ostream& os) {
+    void Cone::draw(std::ostream& os)
+    {
         ThreeDimensional::draw(os);
         os << std::fixed;
         os << "    Radius:  " << std::setprecision(2) << m_radius << std::endl;
@@ -405,16 +419,19 @@ namespace Shapes {
         os << "    Surface: " << std::setprecision(2) << surface() << std::endl;
     }
 
-    double Cone::volume() const {
+    double Cone::volume() const
+    {
         return (acos(-1) * m_radius * m_radius * m_height) / 3;
     }
 
-    double Cone::surface() const {
+    double Cone::surface() const
+    {
         return acos(-1) * m_radius *
             (m_radius + sqrt(m_height * m_height + m_radius * m_radius));
     }
 
-    std::ostream& operator<< (std::ostream& os, const Cone& c) {
+    std::ostream& operator<< (std::ostream& os, const Cone& c)
+    {
         os << (ThreeDimensional&)c << std::endl;
         os << std::fixed;
         os << "    Radius:  " << std::setprecision(2) << c.m_radius << std::endl;
@@ -426,8 +443,8 @@ namespace Shapes {
 
     // ===========================================================================
 
-    void test_01() {
-
+    void test_01()
+    {
         Triangle tria(1, 1, 2, 3, 4);
         tria.draw(std::cout);
         Rectangle rect(10, 10, 20, 40);
@@ -444,8 +461,8 @@ namespace Shapes {
         cone.draw(std::cout);
     }
 
-    void test_02() {
-
+    void test_02()
+    {
         Triangle tria;
         std::cout << tria << std::endl;
         Rectangle rect;
@@ -462,8 +479,8 @@ namespace Shapes {
         std::cout << cone << std::endl;
     }
 
-    void test_03() {
-
+    void test_03()
+    {
         Triangle tria(1, 2, 5, 6, 7);
         Rectangle rect(10, 10, 40, 40);
         Circle circle(20, 20, 10);
@@ -486,8 +503,8 @@ namespace Shapes {
         std::cout << "TotalArea: " << totalArea << std::endl;
     }
 
-    void test_04() {
-
+    void test_04()
+    {
         Triangle tria(1, 2, 5, 6, 7);
         Rectangle rect(10, 10, 40, 40);
         Circle circle(20, 20, 10);

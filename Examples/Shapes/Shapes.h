@@ -54,7 +54,7 @@ namespace Shapes {
 
         // public interface
         virtual void draw(std::ostream& os) override;
-        virtual void moveTo(double x, double y);
+        virtual void moveTo(double x, double y) final;
 
         // contract for derived classes
         virtual double area() const = 0;
@@ -79,7 +79,7 @@ namespace Shapes {
 
         // public interface
         virtual void draw(std::ostream& os) override;
-        virtual void moveTo(double x, double y, double z);
+        virtual void moveTo(double x, double y, double z) final;
 
         // contract for derived classes
         virtual double volume() const = 0;
