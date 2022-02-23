@@ -71,13 +71,13 @@ Für elementare mengentheoretische Operationen wie das Bilden einer Vereinigungs-
 
 | Operator        | Schnittstelle und Beschreibung |
 |:-------------- |-----------------------------------------|
-| `+`-Operator | `IntegerSet operator +(IntegerSet s);`<br/> Das Resultatobjekt ist die Vereinigungsmenge des aktuellen Objekts mit dem Objekt `s`. |
-| `-`-Operator | `IntegerSet operator -(IntegerSet s);`<br/>  Das Resultatobjekt ist die Differenzmenge zwischen dem aktuellen Objekt und dem Objekt `s`. |
-| `^`-Operator | `IntegerSet operator ^(IntegerSet s);`<br/>  Das Resultatobjekt ist die Schnittmenge des aktuellen Objekts mit dem Objekt `s`. |
-| `<=`-Operator | `bool operator <=(IntegerSet s);`<br/> Prüft, ob die Menge des aktuellen Objekts in der Menge des Objekts s enthalten ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
-| `>=`-Operator | `bool operator >=(IntegerSet s);`<br/> Prüft, ob die Menge des aktuellen Objekts eine Obermenge des Objekts s ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
-| `<`-Operator | `bool operator <(IntegerSet s);`<br/> Prüft, ob die Menge des aktuellen Objekts in der Menge des Objekts s **echt** enthalten ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
-| `>`-Operator | `bool operator >(IntegerSet s);`<br/> Prüft, ob die Menge des aktuellen Objekts eine **echte** Obermenge des Objekts s ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
+| `+`-Operator | `IntegerSet operator +(const IntegerSet&);`<br/> Das Resultatobjekt ist die Vereinigungsmenge des aktuellen Objekts mit dem Objekt `s`. |
+| `-`-Operator | `IntegerSet operator -(const IntegerSet&);`<br/>  Das Resultatobjekt ist die Differenzmenge zwischen dem aktuellen Objekt und dem Objekt `s`. |
+| `^`-Operator | `IntegerSet operator ^(const IntegerSet&);`<br/>  Das Resultatobjekt ist die Schnittmenge des aktuellen Objekts mit dem Objekt `s`. |
+| `<=`-Operator | `bool operator <=(const IntegerSet&);`<br/> Prüft, ob die Menge des aktuellen Objekts in der Menge des Objekts s enthalten ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
+| `>=`-Operator | `bool operator >=(const IntegerSet&);`<br/> Prüft, ob die Menge des aktuellen Objekts eine Obermenge des Objekts s ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
+| `<`-Operator | `bool operator <(const IntegerSet&);`<br/> Prüft, ob die Menge des aktuellen Objekts in der Menge des Objekts s **echt** enthalten ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
+| `>`-Operator | `bool operator >(const IntegerSet&);`<br/> Prüft, ob die Menge des aktuellen Objekts eine **echte** Obermenge des Objekts s ist (Rückgabewert `true`) oder nicht (Rückgabewert `false`). |
 
 Tabelle 5. Mengentheoretische Operationen der Klasse `IntegerSet`.
 
