@@ -11,7 +11,7 @@
 namespace AccountsAndBank {
 
     DepositAccount::DepositAccount(int accountNumber)
-        : Account(accountNumber), m_interestRate(3.0) {}
+        : DepositAccount(accountNumber, 3.0) {}
 
     DepositAccount::DepositAccount(int accountNumber, double interestRate)
         : Account(accountNumber), m_interestRate(interestRate) {}

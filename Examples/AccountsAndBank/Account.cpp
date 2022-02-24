@@ -9,9 +9,8 @@
 
 namespace AccountsAndBank {
 
-    Account::Account(int accountNumber) : m_accountNumber(accountNumber) {
-        m_balance = 0;
-    }
+    Account::Account(int accountNumber) 
+        : m_accountNumber(accountNumber), m_balance(0) {}
 
     void Account::deposit(double amount) {
         m_balance += amount;

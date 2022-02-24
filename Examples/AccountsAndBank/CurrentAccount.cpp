@@ -14,9 +14,7 @@ namespace AccountsAndBank {
         : CurrentAccount(accountNumber, 1000.0) {}
 
     CurrentAccount::CurrentAccount(int account, double limit)
-        : Account(account) {
-        m_limit = limit;
-    }
+        : Account(account), m_limit(limit) {}
 
     bool CurrentAccount::withdraw(double amount) {
         if (m_balance + m_limit < amount)
