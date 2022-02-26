@@ -190,7 +190,7 @@ namespace AccountsAndBank {
         std::cout << bank << std::endl;
 
         double totalBalance = bank.getTotalBalance();
-        std::cout << "Bank: Balance=" << bank.getTotalBalance() << std::endl;
+        std::cout << "Bank: Balance=" << totalBalance << std::endl;
 
         bank.deleteAccount(account);
         bank.deleteAccount(anotherAccount);
