@@ -1,11 +1,7 @@
 # C++ General Examples
 
 In diesem Repository sind zahlreiche kleinere C++ -Programme abgelegt,
-um diverse Features von C++ zu demonstrieren. Im Großen und Ganzen wurde dabei versucht,
-die Beispiele auf dem Niveau für C++-Einsteiger (mit Kenntnissen anderer Programmiersprachen) zu halten.
-
-In der Regel sind diese Beispiele etwas umfangreicher im Vergleich zu einem einfachen Code-Snippet,
-deshalb erfolgt die Ablage der Beispiele in diesem Repository.
+um diverse Features von C++ zu demonstrieren. 
 
 ## Inhaltsverzeichnis:
 
