@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="CustomTuple01.cpp" />
     <ClCompile Include="CustomTuple02.cpp" />
+    <ClCompile Include="CustomTuple03.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
