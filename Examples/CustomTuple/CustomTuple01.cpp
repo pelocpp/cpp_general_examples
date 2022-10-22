@@ -13,7 +13,7 @@
 #include <iostream>
 #include <string>
 
-namespace CustomTuple {
+namespace CustomTupleVandevoorde {
 
     template<typename... Types>
     class MyTuple;
@@ -88,7 +88,7 @@ namespace CustomTuple {
 
 void main_mytuple_01()
 {
-    using namespace CustomTuple;
+    using namespace CustomTupleVandevoorde;
 
     MyTuple<int, double, std::string> aTuple (123, 99.99, std::string("ABCDE"));
 
@@ -104,7 +104,7 @@ void main_mytuple_01()
 
 void main_mytuple_02()
 {
-    using namespace CustomTuple;
+    using namespace CustomTupleVandevoorde;
 
     MyTuple<int, double, std::string> aTuple(123, 99.99, std::string("ABCDE"));
 
