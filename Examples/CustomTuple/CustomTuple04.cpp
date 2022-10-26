@@ -10,8 +10,8 @@
 #include <string>
 #include <type_traits>
 
-// #define UseVariadicMemberVariable
-#define UseVariadicInheritance
+#define UseVariadicMemberVariable
+// #define UseVariadicInheritance
 
 namespace CustomTuple_RecursiveMembership
 {
@@ -157,7 +157,6 @@ namespace CustomTuple_Print
         }
     };
 
-    // Hier muss 'Tuple' bekannt sein
     template<typename... TArgs>
     void print(const Tuple<TArgs...>& t) {
         std::cout << "[" << std::boolalpha;
@@ -165,8 +164,6 @@ namespace CustomTuple_Print
         std::cout << "]" << std::endl;
     }
 
-    // Hier ist auch 'Tuple' bzw. 'T' ein Parameter
-    // TODO: Hier und darüber zweimal den NAmen print verwenden ... wer wird aufgerufen ...
     template <
         typename... TArgs,
         template <typename...> typename T
@@ -178,6 +175,49 @@ namespace CustomTuple_Print
         std::cout << "]" << std::endl;
     }
 }
+
+// ===========================================================================
+
+namespace CustomTuple_Folding
+{
+#if defined (UseVariadicMemberVariable)
+    using namespace CustomTuple_RecursiveMembership;
+#elif defined (UseVariadicInheritance)
+    using namespace CustomTuple_RecursiveInheritance;
+#endif
+
+    // ------------------------------------------------
+    // print
+
+    // Template recursion
+    template <size_t i, typename... Args>
+    struct printer 
+    {
+        static void print(const Tuple<Args...>& t) {
+           // std::cout << get<i>(t) << std::endl;
+#pragma message("111")
+            printer<i + 1, Args...>::print(t);
+        }
+    };
+
+    // Terminating template specialisation
+    template <typename... Args>
+    struct printer< sizeof...(Args) , Args ...> 
+    {
+#pragma message("222a")
+        static void print(const Tuple<Args...>&) {
+#pragma message("222b")
+        }
+    };
+
+    template <typename... Args>
+    void print(const Tuple<Args...>& t) {
+#pragma message("333")
+        printer<0, Args...>::print(t);
+    }
+
+}
+
 
 namespace CustomTuple_PrintEx_Stroustrup
 {
@@ -200,12 +240,11 @@ namespace CustomTuple_PrintEx_Stroustrup
 
         template<typename... T>
         static void print(T... t) {
-            TuplePrintHelper<N - 1, T>::print(t);
-            std::cout << ", " << get<N - 1>(t);
+            TuplePrintHelper<N - 1>::print(t ...);
+            std::cout << ", " << get<N - 1>(t ...);
         }
     };
 
-     // Hier muss 'Tuple' bekannt sein
     template<typename... TArgs>
     static void print(const Tuple<TArgs...>& tuple) {
         std::cout << "[" << std::boolalpha;
@@ -213,7 +252,6 @@ namespace CustomTuple_PrintEx_Stroustrup
         std::cout << "]" << std::endl;
     }
 
-    // Hier ist das Tuple mit enthalten.....
     template <
         typename... TArgs,
         template <typename... > typename T
@@ -221,36 +259,8 @@ namespace CustomTuple_PrintEx_Stroustrup
     void printEx(const T<TArgs...>& t)
     {
         std::cout << "[" << std::boolalpha;
-        TuplePrintHelper<sizeof...(TArgs), T<TArgs...>>::print(t);
+        TuplePrintHelper<sizeof...(TArgs)>::print(t);
         std::cout << "]" << std::endl;
-    }
-}
-
-namespace CustomTuple_StreamingOutput
-{
-//#if defined (UseVariadicMemberVariable)
-//    using namespace CustomTuple_RecursiveMembership;
-//#elif defined (UseVariadicInheritance)
-//    using namespace CustomTuple_RecursiveInheritance;
-//#endif
-
-    using namespace CustomTuple_Print;
-
-    //template <typename T>
-    std::ostream& operator << (std::ostream& os, const Tuple<>&)
-    {
-        os << "{}";
-        return os;
-    }
-
-    template <typename T, typename ... TREST>
-    std::ostream& operator << (std::ostream& os, const Tuple<T, TREST...>& t)
-    {
-        os << '{' << get<0>(t);
-        print(t);
-        os << '}';
-        return os;
-
     }
 }
 
@@ -276,6 +286,26 @@ namespace CustomTuple_TypeHolder
     };
 }
 
+namespace CustomTuple_StreamingOutput
+{
+    using namespace CustomTuple_Print;
+
+    std::ostream& operator << (std::ostream& os, const Tuple<>&)
+    {
+        os << "{}";
+        return os;
+    }
+
+    template <typename T, typename ... TRest>
+    std::ostream& operator << (std::ostream& os, const Tuple<T, TRest...>& t)
+    {
+        os << "{ " << get<0>(t);
+        TuplePrintHelper<1 + sizeof...(TRest), Tuple<T, TRest...>>::print(t);
+        os << " }";
+        return os;
+    }
+}
+
 // ===========================================================================
 
 void custom_tuple_00()
@@ -299,12 +329,6 @@ void custom_tuple_00()
 
 void custom_tuple_01()
 {
-#if defined (UseVariadicMemberVariable)
-    using namespace CustomTuple_RecursiveMembership;
-#elif defined (UseVariadicInheritance)
-    using namespace CustomTuple_RecursiveInheritance;
-#endif
-
     using namespace CustomTuple_Print;
 
     Tuple<bool> t1(false);
@@ -316,68 +340,70 @@ void custom_tuple_01()
     printEx(t2);
 }
 
+void custom_tuple_02()
+{
+    using namespace CustomTuple_TypeHolder;
+
+    Tuple<int, char, bool, std::string> t2(1, 'a', true, "ABC");
+    TypeHolder<1, Tuple<int, char, bool, std::string>>::type ch = get<1>(t2);
+    std::cout << ch << std::endl;
+
+    TypeHolder<1, Tuple<int, char, bool, std::string>>::type ch2 = 'A';
+    std::cout << ch2 << std::endl;
+}
+
+
+// FEHLER: Hier wird immer nur das erste Element ausgegeben ...
+void custom_tuple_03()
+{
+    using namespace CustomTuple_PrintEx_Stroustrup;
+
+    Tuple<int, char, bool, std::string> t(123, 'A', true, "ABC");
+    TuplePrintHelper<0>::print(t);
+    TuplePrintHelper<1>::print(t);
+    TuplePrintHelper<2>::print(t);
+    TuplePrintHelper<3>::print(t);
+}
+
+
 
 // Bis hier her ist es getestet ........
-
-// Das Template Tempate ist doppelt ........
 
 // Unter Gcc testen 
 
 // Viushal nachschauen: Was ist dort noch vorhanden ... Folding ....
 
 
-void custom_tuple_02()
-{
-#if defined (UseVariadicMemberVariable)
-    using namespace CustomTuple_RecursiveMembership;
-#elif defined (UseVariadicInheritance)
-    using namespace CustomTuple_RecursiveInheritance;
-#endif
-
-    using namespace CustomTuple_TypeHolder;
-
-    Tuple<int, char, bool, std::string> t2(1, 'a', true, "ABC");
-
-    TypeHolder<1, Tuple<int, char, bool, std::string>>::type ch = 'A';
-    std::cout << ch << std::endl;
-}
-
-void custom_tuple_03()
-{
-#if defined (UseVariadicMemberVariable)
-    using namespace CustomTuple_RecursiveMembership;
-#elif defined (UseVariadicInheritance)
-    using namespace CustomTuple_RecursiveInheritance;
-#endif
-
-    using namespace CustomTuple_PrintEx_Stroustrup;
-
-    Tuple<int, char, bool, std::string> t(123, 'A', true, "ABC");
-    TuplePrintHelper<0>::print(t);
-    print(t);
-}
 
 void custom_tuple_04()
 {
-#if defined (UseVariadicMemberVariable)
-    using namespace CustomTuple_RecursiveMembership;
-#elif defined (UseVariadicInheritance)
-    using namespace CustomTuple_RecursiveInheritance;
-#endif
-
     using namespace CustomTuple_StreamingOutput;
 
     Tuple<int, char, bool, std::string> tuple{ 1, 'a', true, "ABC" };
-
     std::cout << tuple << std::endl;
 }
+
+void custom_tuple_05()
+{
+    //using namespace CustomTuple_Folding;
+
+    //Tuple<double> t1(123.456);
+    //print(t1);
+
+    //Tuple<int, char, bool, std::string> t2(123, 'a', true, "ABC");
+    //print(t2);
+}
+
+
 
 void main_custom_tuple()
 {
     //custom_tuple_00();
-    custom_tuple_01();
+    //custom_tuple_01();
     //custom_tuple_02();
-    //custom_tuple_03();
+    custom_tuple_03();
+    //custom_tuple_04();
+    //custom_tuple_05();
 }
 
 // ===========================================================================
