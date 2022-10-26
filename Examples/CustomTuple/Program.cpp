@@ -7,6 +7,7 @@ void main_mytuple();
 void main_mytuple_alternate();
 void main_mytuple_unsophisticatedTuple();
 void main_custom_tuple();
+void main_simple_tuple();
 
 int main()
 {
