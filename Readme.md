@@ -42,7 +42,21 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Template-Klasse für eine Stapel (Stack)](Examples/TemplateStack/Resources/Readme.md)
+#### [Klassen-Template für einen Taschenrechner](Examples/CalculatorTemplate/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Definition eines Klassen Templates
+  * Erzeugung von Objekten eines Klassen-Templates
+  * Klassen-Templates mit mehreren Parametern
+  * Definition von Methoden eines Klassen-Templates
+  * Eine Methode eines Klassen-Templates Überschreiben/spezialisieren
+  * *Member Function Templates*
+  * Klassen-Templates und Non-Type Parameter
+  * Default-Werte für Template-Parameter
+
+---
+
+#### [Klassen-Template für einen Stapel (Stack)](Examples/StackTemplate/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Erstellung eines einfachen Klassentemplates

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{581ac52d-f6a2-4346-9ad9-59cd7f18523f}</ProjectGuid>
-    <RootNamespace>CustomTuple</RootNamespace>
+    <ProjectGuid>{2b774a3f-714e-4473-8665-8e9d1abc9344}</ProjectGuid>
+    <RootNamespace>CalculatorTemplate</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,18 +70,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -116,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,13 +130,19 @@
     <None Include="Resources\Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CustomTuple01.cpp" />
-    <ClCompile Include="CustomTuple02.cpp" />
-    <ClCompile Include="CustomTuple03.cpp" />
-    <ClCompile Include="CustomTuple04.cpp" />
-    <ClCompile Include="CustomTuple05.cpp" />
-    <ClCompile Include="Cpp_Compiler_Endless_Loop.cpp" />
+    <ClInclude Include="Calculator.h" />
+    <ClInclude Include="CalculatorFraction.h" />
+    <ClInclude Include="CalculatorPtr.h" />
+    <ClInclude Include="Fraction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Test01.cpp" />
+    <ClCompile Include="Test02.cpp" />
+    <ClCompile Include="Test03.cpp" />
+    <ClCompile Include="Test04.cpp" />
+    <ClCompile Include="Test05.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,5 @@
 // ===========================================================================
-// TemplateStack.cpp // Template based Stack
+// StackTemplate.cpp // Templated class Stack
 // ===========================================================================
 
 #include <iostream>

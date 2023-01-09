@@ -15,31 +15,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Readme.md">
-      <Filter>Resource Files</Filter>
-    </None>
+    <ClInclude Include="Calculator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorPtr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorFraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CustomTuple01.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CustomTuple02.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CustomTuple03.cpp">
+    <ClCompile Include="Test01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CustomTuple04.cpp">
+    <ClCompile Include="Test02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CustomTuple05.cpp">
+    <ClCompile Include="Test04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cpp_Compiler_Endless_Loop.cpp">
+    <ClCompile Include="Fraction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test05.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Readme.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

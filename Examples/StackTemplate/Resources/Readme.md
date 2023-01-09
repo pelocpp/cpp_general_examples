@@ -1,6 +1,6 @@
-# Beispiel "Template-Klasse für eine Stapel (Stack)"
+# Beispiel Klassen-Template für einen Stapel (*Stack*)
 
-Wir stellen die Realisierung einer Template-Klasse für eine Stapel (Stack) vor.
+Wir stellen die Realisierung eines Klassen-Template für einen Stapel (*Stack*) vor.
 Bei einer Implementierung der Klasse bleibt der konkrete Typ offen, es wird ein Stellvertreterbezeichner benutzt
 (in der Regel `T`).
 
