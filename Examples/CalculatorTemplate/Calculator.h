@@ -30,8 +30,6 @@ public:
     void memorySub(T x) { m_memory -= x; }
 
     // some more functions
-    T NThRoot () { /* TBD */ }
-
     template <size_t TN>
     T NThPower(T x) {
         T result{ 1 };
@@ -60,7 +58,14 @@ template <>
 int inline Calculator<int>::div(int n, int m) {
     // rounding instead of truncation
     std::cout << "rounding ..." << std::endl;
-    return static_cast<int>(((n / (double)m) + 0.5));
+    return static_cast<int>(((n / static_cast<double>(m)) + 0.5));
+}
+
+template <>
+long inline Calculator<long>::div(long n, long m) {
+    // rounding instead of truncation
+    std::cout << "rounding ..." << std::endl;
+    return static_cast<long>(((n / static_cast<double>(m)) + 0.5));
 }
 
 // =======================================================================

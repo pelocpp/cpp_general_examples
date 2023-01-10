@@ -30,6 +30,7 @@ public:
     void memoryAdd(const Fraction& f) { m_memory = m_memory.add(f); }
     void memorySub(const Fraction& f) { m_memory = m_memory.sub(f); }
 
+    // some more functions
     template <size_t TN>
     Fraction NThPower(const Fraction& f) {
         Fraction result{ 1, 1 };
@@ -39,10 +40,7 @@ public:
         return result;
     }
 
-    //// tbd
-    //T NThRoot() {}
-    //T NThPower() {}
-    //T Inverse() {}
+    Fraction Inverse(Fraction f) { return { f.getDenom() , f.getNum()}; }
 };
 
 // =======================================================================

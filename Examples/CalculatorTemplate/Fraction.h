@@ -20,6 +20,10 @@ public:
     Fraction();
     Fraction(int, int);
 
+    // getter
+    int getNum() const { return m_num; }
+    int getDenom() const { return m_denom; }
+
     // binary arithmetic methods
     Fraction add (const Fraction&) const;
     Fraction sub (const Fraction&) const;

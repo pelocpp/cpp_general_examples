@@ -43,7 +43,6 @@ public:
     void memorySub(const std::unique_ptr<T>& up) { m_memory -= *up; }
 
     // tbd
-    T NThRoot() {}
     T NThPower() {}
     T Inverse(const std::unique_ptr<T>& up) { return 1 / *up; }
 };

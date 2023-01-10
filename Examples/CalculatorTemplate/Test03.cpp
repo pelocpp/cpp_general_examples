@@ -41,6 +41,12 @@ void test03()
     f = { 3, 2 };
     power = fractionCalc.NThPower<3>(f);
     std::cout << f << " ^ 3 = " << power << std::endl;
+
+    // testing Inverse
+    Fraction g = { 3, 7 };
+    std::cout << "g: " << g << std::endl;
+    g = fractionCalc.Inverse(g);
+    std::cout << "Inverse of g: " << g << std::endl;
 }
 
 // =======================================================================
