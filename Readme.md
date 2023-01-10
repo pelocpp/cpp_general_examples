@@ -45,11 +45,11 @@ Folgende Aspekte werden betrachtet:
 #### [Klassen-Template für einen Taschenrechner](Examples/CalculatorTemplate/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
-  * Definition eines Klassen Templates
+  * Definition eines Klassen-Templates
   * Erzeugung von Objekten eines Klassen-Templates
   * Klassen-Templates mit mehreren Parametern
   * Definition von Methoden eines Klassen-Templates
-  * Eine Methode eines Klassen-Templates Überschreiben/spezialisieren
+  * Eine Methode eines Klassen-Templates überschreiben/spezialisieren
   * *Member Function Templates*
   * Klassen-Templates und Non-Type Parameter
   * Default-Werte für Template-Parameter

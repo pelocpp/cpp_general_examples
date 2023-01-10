@@ -30,7 +30,7 @@ public:
     void memorySub(T x) { m_memory -= x; }
 
     // some more functions
-    T NThRoot () {}
+    T NThRoot () { /* TBD */ }
 
     template <size_t TN>
     T NThPower(T x) {
@@ -43,7 +43,7 @@ public:
 
     T Inverse(T x) { return 1 / x; }
 
-    U factorial (int n) {
+    U Factorial(int n) {
         static_assert(std::is_unsigned<U>::value);
 
         U facul{ 1 };

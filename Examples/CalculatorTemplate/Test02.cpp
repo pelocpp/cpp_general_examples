@@ -12,14 +12,14 @@
  * Demonstrating Class Template Partial Specialization
  */
 
-//void test01a()
-//{
-//    // T = int*
-//    Calculator<int*> intCalc;
-//    int* np = new int{ 1 };
-//    int* mp = new int{ 2 };
-//    int value = intCalc.add(np, mp);  // Error: '+': cannot add two pointers
-//}
+void test02_Error()
+{
+    // T = int*
+    //Calculator<int*> intCalc;
+    //int* np = new int{ 1 };
+    //int* mp = new int{ 2 };
+    //int value = intCalc.add(np, mp);  // Error: '+': cannot add two pointers
+}
 
 void test02_ArithmeticFuntions()
 {
@@ -46,6 +46,7 @@ void test02_MemoryFuntions()
 
 void test02()
 {
+    test02_Error();
     test02_ArithmeticFuntions();
     test02_MemoryFuntions();
 }

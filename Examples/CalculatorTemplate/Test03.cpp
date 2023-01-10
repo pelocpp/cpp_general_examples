@@ -26,6 +26,21 @@ void test03()
     int m{ 2 };
     int value = intCalc.add(n, m);
     std::cout << n << " + " << m << " = " << value << std::endl;
+
+    // testing memory functions of class Calculator<Fraction>
+    fractionCalc.memoryStore({ 1, 6 });
+    fractionCalc.memoryAdd({ 2, 6 });
+    fractionCalc.memoryAdd({ 3, 6 });
+    result = fractionCalc.memoryRecall();
+    std::cout << "{ 1, 6 } + { 2, 6 } + { 3, 6 } = " << result << std::endl;
+
+    // testing NThPower
+    Fraction f = { 1, 2 };
+    Fraction power = fractionCalc.NThPower<5>(f);
+    std::cout << f << " ^ 5 = " << power << std::endl;
+    f = { 3, 2 };
+    power = fractionCalc.NThPower<3>(f);
+    std::cout << f << " ^ 3 = " << power << std::endl;
 }
 
 // =======================================================================

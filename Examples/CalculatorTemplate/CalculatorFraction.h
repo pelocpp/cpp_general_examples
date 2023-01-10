@@ -18,24 +18,26 @@ public:
     Calculator() : m_memory{} {}
 
     // arithmetic functions
-    Fraction add(const Fraction& x, const Fraction& y) { return x.add(y); }
-    Fraction sub(const Fraction& x, const Fraction& y) { return x.sub(y); }
-    Fraction mul(const Fraction& x, const Fraction& y) { return x.mul(y); }
-    Fraction div(const Fraction& x, const Fraction& y) { return x.div(y); }
+    Fraction add(const Fraction& f1, const Fraction& f2) { return f1.add(f2); }
+    Fraction sub(const Fraction& f1, const Fraction& f2) { return f1.sub(f2); }
+    Fraction mul(const Fraction& f1, const Fraction& f2) { return f1.mul(f2); }
+    Fraction div(const Fraction& f1, const Fraction& f2) { return f1.div(f2); }
 
-    //// memory functions
-    //void memoryStore(const std::unique_ptr<T>& up) { m_memory = *up; }
+    // memory functions
+    void memoryStore(const Fraction& f) { m_memory = f; }
+    void memoryClear() { m_memory = Fraction{}; }
+    Fraction memoryRecall() { return m_memory; }
+    void memoryAdd(const Fraction& f) { m_memory = m_memory.add(f); }
+    void memorySub(const Fraction& f) { m_memory = m_memory.sub(f); }
 
-    //void memoryClear() {
-    //    m_memory = {};
-    //}   // geht auch m_memory = {};  //  m_memory = T{};
-
-    //std::unique_ptr<T> memoryRecall() { return std::make_unique<T>(m_memory); }
-
-    //void memoryAdd(const std::unique_ptr<T>& up) { m_memory += *up; }
-
-    //void memorySub(const std::unique_ptr<T>& up) { m_memory -= *up; }
-
+    template <size_t TN>
+    Fraction NThPower(const Fraction& f) {
+        Fraction result{ 1, 1 };
+        for (size_t i{}; i != TN; ++i) {
+            result = result.mul(f);
+        }
+        return result;
+    }
 
     //// tbd
     //T NThRoot() {}

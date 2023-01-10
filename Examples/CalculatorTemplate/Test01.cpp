@@ -11,7 +11,7 @@
  * Demonstrating creation of objects of a Class Template 
  */
 
-void test01_ArithmeticMemoryFuntions()
+void test01_arithmeticMemoryFuntions()
 {
     // T = int
     Calculator<int> intCalc;
@@ -51,21 +51,20 @@ void test01_ArithmeticMemoryFuntions()
     std::cout << z1 << " - " << z2 << " = " << complexResult << std::endl;
 }
 
-void test01_Factorial()
+void test01_factorial()
 {
     // T = int, U = unsigned long
     Calculator<int, unsigned long> calc;
     for (int i{}; i != 10; ++i) {
-        unsigned long facul = calc.factorial(i);
+        unsigned long facul = calc.Factorial(i);
         std::cout << i << "! = " << facul << std::endl;
     }
 }
 
-
 void test01()
 {
-    // test01_ArithmeticMemoryFuntions();
-    test01_Factorial();
+    test01_arithmeticMemoryFuntions();
+    test01_factorial();
 }
 
 // =======================================================================
