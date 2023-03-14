@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Hash.h" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="TestHash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hash.hpp" />

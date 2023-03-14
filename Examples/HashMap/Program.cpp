@@ -3,10 +3,10 @@
 // ===========================================================================
 
 // function prototypes
-// void main_inheritance();
+extern void test_hashFunction();
 
 int main() {
-   // main_inheritance();
+    test_hashFunction();
     return 0;
 }
 

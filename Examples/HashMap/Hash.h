@@ -6,7 +6,7 @@
 
 #include <string>
 
-namespace SimpleHashMap {
+namespace BasicHashMap {
 
 	// primary template - default hash function object
 	template <typename T>
@@ -17,12 +17,12 @@ namespace SimpleHashMap {
 	};
 
 	// template specialization for std::string objects
-	template <>
-	class Hash<std::string>
-	{
-	public:
-		size_t operator()(const std::string& key) const;
-	};
+	//template <>
+	//class Hash<std::string>
+	//{
+	//public:
+	//	size_t operator()(const std::string& key) const;
+	//};
 
 	// TODO: Was ist mit const char*
 	
