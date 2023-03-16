@@ -3,10 +3,12 @@
 // ===========================================================================
 
 // function prototypes
-extern void test_hashFunction();
+extern void testHashFunction();
+extern void testHashMap();
 
 int main() {
-    test_hashFunction();
+    // testHashFunction();
+    testHashMap();
     return 0;
 }
 
