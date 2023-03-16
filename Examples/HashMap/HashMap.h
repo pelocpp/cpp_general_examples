@@ -24,7 +24,7 @@ namespace BasicHashMap {
 		using ListType = std::list<EntryType>;
 
 	private:
-		static const size_t HashTableSize = 19;  // or 101
+		static const size_t HashTableSize = 23;  // or 101
 
 		std::vector<std::list<EntryType>> m_buckets;
 		size_t      m_size;
@@ -50,16 +50,16 @@ namespace BasicHashMap {
 		bool insert(const EntryType& entry)
 		{
 			// try to find the element.
-			auto [iter, bucket] = findElement(entry.first);
+			auto [iter, index] = findElement(entry.first);
 
-			if (iter != std::end(m_buckets[bucket])) {
+			if (iter != std::end(m_buckets[index])) {
 				// element already exists
 				return false;  
 			}
 			else {
 				// element not found, insert a new one
 				++ m_size;
-				m_buckets[bucket].push_back(entry);
+				m_buckets[index].push_back(entry);
 				return true;
 			}
 		}
@@ -67,11 +67,11 @@ namespace BasicHashMap {
 		bool erase(const Key& key)
 		{
 			// First, try to find the element.
-			auto [it, bucket] = findElement(key);
+			auto [iter, index] = findElement(key);
 
-			if (it != end(m_buckets[bucket])) {
+			if (iter != std::end(m_buckets[index])) {
 				// The element exists -- erase it.
-				m_buckets[bucket].erase(it);
+				m_buckets[index].erase(iter);
 				--m_size;
 				return true;
 			}
@@ -80,10 +80,8 @@ namespace BasicHashMap {
 			}
 		}
 
-
 		void clear() noexcept  // why noexcept
 		{
-			// Call clear on each bucket.
 			for (auto& bucket : m_buckets) {
 				bucket.clear();
 			}
@@ -92,9 +90,9 @@ namespace BasicHashMap {
 
 		[[nodiscard]] EntryType* find(const Key& key)
 		{
-			 auto[iter, bucket] = findElement(key);
+			 auto[iter, index] = findElement(key);
 
-			 if (iter == std::end(m_buckets[bucket])) {
+			 if (iter == std::end(m_buckets[index])) {
 				  return nullptr;
 			 }
 
@@ -106,7 +104,19 @@ namespace BasicHashMap {
 			return const_cast<HashMap<Key, T>*>(this) -> find(key);
 		}
 
+		T& operator[] (const Key& key)
+		{
+			auto [iter, index] = findElement(key);
 
+			if (iter == std::end(m_buckets[index])) {
+				++m_size;
+				m_buckets[index].push_back(std::make_pair(key, T{}));
+				return m_buckets[index].back().second;
+			}
+			else {
+				return iter->second;
+			}
+		}
 
 	private:
 		std::pair<typename ListType::iterator, size_t> findElement(const Key& key)
