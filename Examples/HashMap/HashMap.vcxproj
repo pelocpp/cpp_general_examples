@@ -131,12 +131,16 @@
     <ClCompile Include="Hash.h" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="TestHash.cpp" />
-    <ClCompile Include="TestHashMap.cpp" />
+    <ClCompile Include="TestHashMap_01_Basics.cpp" />
+    <ClCompile Include="TestHashMap_02_Construction_Assignment.cpp" />
+    <ClCompile Include="TestHashMap_03_STL_Compliance.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hash.hpp" />
+    <ClInclude Include="ConstHashMapIterator.h" />
+    <ClInclude Include="HashMapIterator.h" />
+    <ClInclude Include="_Hash.hpp" />
     <ClInclude Include="HashMap.h" />
-    <ClInclude Include="HashMap.hpp" />
+    <ClInclude Include="_HashMap.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

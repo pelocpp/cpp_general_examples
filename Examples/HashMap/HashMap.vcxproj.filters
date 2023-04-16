@@ -24,18 +24,30 @@
     <ClCompile Include="Hash.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestHashMap.cpp">
+    <ClCompile Include="TestHashMap_01_Basics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap_02_Construction_Assignment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap_03_STL_Compliance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hash.hpp">
+    <ClInclude Include="_Hash.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HashMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HashMap.hpp">
+    <ClInclude Include="_HashMap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstHashMapIterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HashMapIterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

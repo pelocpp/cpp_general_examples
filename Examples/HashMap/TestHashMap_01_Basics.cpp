@@ -1,5 +1,5 @@
 // ===========================================================================
-// TestHash.cpp // Testing Hash Function
+// TestHashMap_01_Basics.cpp // Testing Hash Function
 // ===========================================================================
 
 #include <iostream>
@@ -9,15 +9,14 @@
 #include "HashMap.h"
 
 // function prototypes
-void testHashMap_01();
-void testHashMap_02();
-void testHashMap_03();
-void testHashMap_04();
-void testHashMap_05();
-void testHashMap_06();
+static void testHashMap_01();
+static void testHashMap_02();
+static void testHashMap_03();
+static void testHashMap_04();
+static void testHashMap_05();
+static void testHashMap_06();
 
-
-void testHashMap_01() {
+static void testHashMap_01() {
 
     using namespace BasicHashMap;
 
@@ -28,7 +27,7 @@ void testHashMap_01() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_02() {
+static void testHashMap_02() {
 
     using namespace BasicHashMap;
 
@@ -39,7 +38,7 @@ void testHashMap_02() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_03() {
+static void testHashMap_03() {
 
     using namespace BasicHashMap;
 
@@ -50,7 +49,7 @@ void testHashMap_03() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_04() {
+static void testHashMap_04() {
 
     using namespace BasicHashMap;
 
@@ -80,7 +79,7 @@ void testHashMap_04() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_05() {
+static void testHashMap_05() {
 
     using namespace BasicHashMap;
 
@@ -111,11 +110,11 @@ void testHashMap_05() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_06() {
+static void testHashMap_06() {
 
     using namespace BasicHashMap;
 
-    std::cout << "Test HashMap - 05:" << std::endl;
+    std::cout << "Test HashMap - 06:" << std::endl;
     HashMap<std::string, size_t> map{};
     map.insert(std::make_pair(std::string{ "Meier" }, 123456));
     map.insert(std::make_pair(std::string{ "Mueller" }, 54321));
@@ -139,8 +138,24 @@ void testHashMap_06() {
     std::cout << "Done." << std::endl;
 }
 
+static void testHashMap_07() {
 
-void testHashMap() {
+    using namespace BasicHashMap;
+
+    std::cout << "Test HashMap - 07:" << std::endl;
+    HashMap<std::string, size_t> map{};
+    map.insert(std::make_pair(std::string{ "Meier" }, 123456));
+    map.insert(std::make_pair(std::string{ "Mueller" }, 54321));
+    map.insert(std::make_pair(std::string{ "Schneider" }, 14234));
+    map.insert(std::make_pair(std::string{ "Fischer" }, 32452));
+    map.insert(std::make_pair(std::string{ "Wagner" }, 98234));
+
+    map.print();
+
+    std::cout << "Done." << std::endl;
+}
+
+void testHashMap_Basic() {
 
     testHashMap_01();
     testHashMap_02();
@@ -148,6 +163,7 @@ void testHashMap() {
     testHashMap_04();
     testHashMap_05();
     testHashMap_06();
+    testHashMap_07();
 }
 
 // ===========================================================================

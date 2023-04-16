@@ -4,11 +4,15 @@
 
 // function prototypes
 extern void testHashFunction();
-extern void testHashMap();
+extern void testHashMap_Basic();
+extern void testHashMap_Construction_Assignment();
+extern void testHashMap_Compliance();
 
 int main() {
     // testHashFunction();
-    testHashMap();
+    // testHashMap_Basic();
+    // testHashMap_Construction_Assignment();
+    testHashMap_Compliance();
     return 0;
 }
 
