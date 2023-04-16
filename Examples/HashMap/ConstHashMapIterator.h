@@ -21,7 +21,6 @@
 #include <algorithm>
 #include <utility>
 
-
 namespace BasicHashMap {
 
     // const_hash_map_iterator class definition
@@ -29,12 +28,11 @@ namespace BasicHashMap {
     class const_hash_map_iterator
     {
         // The hash_map class needs access to all members of the const_hash_map_iterator
-       friend HashMap;
+       //friend HashMap;
 
     public:
         using value_type = typename HashMap::value_type;
         using difference_type = ptrdiff_t;
-        // using iterator_category = std::bidirectional_iterator_tag;
         using iterator_category = std::forward_iterator_tag;
         using pointer = value_type*;
         using reference = value_type&;
@@ -44,7 +42,6 @@ namespace BasicHashMap {
         size_t mBucketIndex = 0;
         list_iterator_type mListIterator;
         const HashMap* mHashmap = nullptr;
-
 
     public:
         // Bidirectional iterators must supply a default constructor.

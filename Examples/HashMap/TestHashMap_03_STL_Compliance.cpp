@@ -6,15 +6,17 @@
 #include <utility>
 #include <algorithm>
 #include <vector>
+#include <iterator>
 
 #include "Hash.h"
 #include "HashMap.h"
 
 // function prototypes
 static void testHashMap_01();
+static void testHashMap_02();
 
-static void testHashMap_01() {
-
+static void testHashMap_01()
+{
     using namespace BasicHashMap;
 
     std::cout << "Test HashMap - 03:" << std::endl;
@@ -38,9 +40,64 @@ static void testHashMap_01() {
     }
 }
 
+static void testHashMap_02()
+{
+    using namespace BasicHashMap;
+
+    std::cout << "Test HashMap - 03:" << std::endl;
+
+    HashMap<std::string, size_t> map{};
+    map.insert(std::make_pair(std::string{ "Meier" }, 123456));
+    map.insert(std::make_pair(std::string{ "Mueller" }, 54321));
+    map.insert(std::make_pair(std::string{ "Schneider" }, 14234));
+    map.insert(std::make_pair(std::string{ "Fischer" }, 32452));
+    map.insert(std::make_pair(std::string{ "Wagner" }, 98234));
+    
+    std::vector<std::string> names;
+
+    std::transform(
+        map.begin(),
+        map.end(),
+        std::back_inserter(names),
+        [](const auto& entry) {
+            std::cout << entry.first << std::endl;
+            return entry.first;
+
+        }
+    ); 
+}
+
+static void testHashMap_03()
+{
+    using namespace BasicHashMap;
+
+    std::cout << "Test HashMap - 03:" << std::endl;
+
+    HashMap<std::string, size_t> map{};
+    map.insert(std::make_pair(std::string{ "Meier" }, 123456));
+    map.insert(std::make_pair(std::string{ "Mueller" }, 54321));
+    map.insert(std::make_pair(std::string{ "Schneider" }, 14234));
+    map.insert(std::make_pair(std::string{ "Fischer" }, 32452));
+    map.insert(std::make_pair(std::string{ "Wagner" }, 98234));
+
+    // std::vector<std::string> names;
+    HashMap<std::string, size_t> map2{};
+
+    //std::copy_if(
+    //    map.begin(),
+    //    map.end(),
+    //    std::insert_iterator(map2),
+    //    [](const auto& entry) {
+
+    //        return true;
+    //    }
+    //);
+}
+
 void testHashMap_Compliance() {
 
-    testHashMap_01();
+   // testHashMap_01();
+    testHashMap_02();
 }
 
 // ===========================================================================

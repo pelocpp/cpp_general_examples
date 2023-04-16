@@ -21,7 +21,6 @@
 #include <algorithm>
 #include <utility>
 
-
 namespace BasicHashMap {
 
 
@@ -29,7 +28,7 @@ namespace BasicHashMap {
     class hash_map_iterator : public const_hash_map_iterator<HashMap>
     {
         // The hash_map class needs access to all members of the hash_map_iterator
-        friend HashMap;
+      //  friend HashMap;
 
     public:
         using value_type = typename const_hash_map_iterator<HashMap>::value_type;
