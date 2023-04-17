@@ -2,13 +2,14 @@
 // TestHashMap_02_Construction_Assignment.cpp // Testing Hash Function
 // ===========================================================================
 
+export module hash_map_test:test_hashmap_construction_assignment;
+
 import hash_map;
-
 import std;
-
 
 // function prototypes
 static void testHashMap_01();
+static void testHashMap_02();
 
 static void testHashMap_01() {
 
@@ -68,9 +69,9 @@ static void testHashMap_02() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_Construction_Assignment() {
+export void testHashMap_Construction_Assignment() {
 
-    //testHashMap_01();
+    testHashMap_01();
     testHashMap_02();
 }
 

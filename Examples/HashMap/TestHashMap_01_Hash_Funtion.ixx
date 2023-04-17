@@ -1,12 +1,13 @@
 // ===========================================================================
-// TestHash.cpp // Testing Hash Function
+// TestHashMap_01_Hash_Funtion.cpp // Testing Hash Function
 // ===========================================================================
 
-import hash_map;
+export module hash_map_test:test_hash_function;
 
+import hash_map;
 import std;
 
-// function prototypes
+// internal function prototypes
 void test_hashFunction_01();
 
 void test_hashFunction_01() {
@@ -24,7 +25,7 @@ void test_hashFunction_01() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashFunction() {
+export void testHashFunction() {
 
     test_hashFunction_01();
 }

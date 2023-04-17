@@ -24,10 +24,10 @@ namespace BasicHashMap {
 
         using value_type = std::pair<const Key, T>;
 
-        //using difference_type = ptrdiff_t;
-        //using iterator_category = std::forward_iterator_tag;
-        //using pointer = value_type*;
-        //using reference = value_type&;
+        using difference_type = std::ptrdiff_t;
+        using iterator_category = std::forward_iterator_tag;
+        using pointer = value_type*;
+        using reference = value_type&;
 
         // benutzt in der Iterator Klasse 
         // Die Namen sind stilistisch alle sehr verschieden ...
@@ -37,12 +37,10 @@ namespace BasicHashMap {
         using iterator = HashMapIterator<hash_map_type>;
         using const_iterator = ConstHashMapIterator<hash_map_type>;
 
-        // The iterator classes need access to all members of the hash_map
+        // the iterator classes need access to all members of the hash_map
         friend class HashMapIterator<hash_map_type>;
         friend class ConstHashMapIterator<hash_map_type>;
 
-
-    // private:  TO BE FIXED must be private
     private:
         static const size_t HashTableSize = 23;  // or 101
 

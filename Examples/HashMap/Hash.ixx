@@ -6,7 +6,7 @@ export module hash_map:hash_function;
 
 import std;
 
-export namespace BasicHashMap {
+namespace BasicHashMap {
 
 	// primary template - default hash function object
     export
@@ -24,8 +24,6 @@ export namespace BasicHashMap {
 				unsigned char b = *((reinterpret_cast<const unsigned char*>(&key)) + i);
 				sum += b;
 			}
-
-            sum += sum;  // WIEDER ENTFERNEN !!!
 
 			return sum;
 		}

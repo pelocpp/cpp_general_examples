@@ -21,18 +21,6 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestHash.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TestHashMap_01_Basics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TestHashMap_02_Construction_Assignment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TestHashMap_03_STL_Compliance.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ConstHashMapIterator.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -46,6 +34,21 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="std.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap_01_Hash_Funtion.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap_02_Basics.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap_03_Construction_Assignment.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashMap_04_STL_Compliance.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>

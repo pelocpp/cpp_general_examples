@@ -2,8 +2,9 @@
 // TestHashMap_01_Basics.cpp // Testing Hash Function
 // ===========================================================================
 
-import hash_map;
+export module hash_map_test:test_hashmap_basics;
 
+import hash_map;
 import std;
 
 // function prototypes
@@ -153,7 +154,7 @@ static void testHashMap_07() {
     std::cout << "Done." << std::endl;
 }
 
-void testHashMap_Basic() {
+export void testHashMap_Basic() {
 
     testHashMap_01();
     testHashMap_02();

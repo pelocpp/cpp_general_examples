@@ -132,11 +132,14 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="std.ixx" />
-    <ClCompile Include="TestHash.cpp" />
-    <ClCompile Include="TestHashMap_01_Basics.cpp" />
-    <ClCompile Include="TestHashMap_02_Construction_Assignment.cpp" />
-    <ClCompile Include="TestHashMap_03_STL_Compliance.cpp" />
+    <ClCompile Include="std.ixx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="TestHashMap.ixx" />
+    <ClCompile Include="TestHashMap_01_Hash_Funtion.ixx" />
+    <ClCompile Include="TestHashMap_02_Basics.ixx" />
+    <ClCompile Include="TestHashMap_03_Construction_Assignment.ixx" />
+    <ClCompile Include="TestHashMap_04_STL_Compliance.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConstHashMapIterator.ixx">

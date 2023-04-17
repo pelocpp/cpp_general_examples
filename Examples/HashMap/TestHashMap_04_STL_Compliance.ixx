@@ -2,8 +2,9 @@
 // TestHashMap_03_STL_Compliance.cpp // Testing Hash Function
 // ===========================================================================
 
-import hash_map;
+export module hash_map_test:test_hashmap_stl_compliance;
 
+import hash_map;
 import std;
 
 // function prototypes
@@ -89,10 +90,28 @@ static void testHashMap_03()
     //);
 }
 
-void testHashMap_Compliance() {
+static void testHashMap_04()
+{
+    using namespace BasicHashMap;
 
-   // testHashMap_01();
+    std::cout << "Test HashMap - 04:" << std::endl;
+
+    HashMap<std::string, size_t> map{};
+    map.insert(std::make_pair(std::string{ "Meier" }, 123456));
+    map.insert(std::make_pair(std::string{ "Mueller" }, 54321));
+    map.insert(std::make_pair(std::string{ "Schneider" }, 14234));
+    map.insert(std::make_pair(std::string{ "Fischer" }, 32452));
+    map.insert(std::make_pair(std::string{ "Wagner" }, 98234));
+
+    ConstHashMapIterator<HashMap<std::string, size_t>> iter;
+}
+
+export void testHashMap_Compliance() {
+
+    testHashMap_01();
     testHashMap_02();
+    testHashMap_03();
+    testHashMap_04();
 }
 
 // ===========================================================================

@@ -10,7 +10,7 @@ export import :const_hash_map_iterator;
 
 namespace BasicHashMap {
 
-    export
+ //   export
     template <typename HashMap>
     class HashMapIterator : public ConstHashMapIterator<HashMap>
     {
