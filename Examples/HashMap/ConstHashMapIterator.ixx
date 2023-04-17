@@ -2,20 +2,20 @@
 // ConstHashMapIterator.h // Const Forward Iterator Interface & Implementation
 // ===========================================================================
 
-#pragma once
+export module hash_map:const_hash_map_iterator;
 
-#include <iostream>
-#include <string>
+import std;
 
 namespace BasicHashMap {
 
     // const_hash_map_iterator class definition
+    export
     template <typename HashMap>
     class ConstHashMapIterator
     {
     public:
         using value_type = typename HashMap::value_type;
-        using difference_type = ptrdiff_t;
+        using difference_type = std::ptrdiff_t;
         using iterator_category = std::forward_iterator_tag;
         using pointer = value_type*;
         using reference = value_type&;

@@ -2,14 +2,9 @@
 // TestHashMap_03_STL_Compliance.cpp // Testing Hash Function
 // ===========================================================================
 
-#include <iostream>
-#include <utility>
-#include <algorithm>
-#include <vector>
-#include <iterator>
+import hash_map;
 
-#include "Hash.h"
-#include "HashMap.h"
+import std;
 
 // function prototypes
 static void testHashMap_01();

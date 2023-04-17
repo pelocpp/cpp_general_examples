@@ -2,14 +2,15 @@
 // HashMapIterator.h // Forward Iterator Interface & Implementation
 // ===========================================================================
 
-#pragma once
+export module hash_map:hash_map_iterator;
 
-#include <iostream>
-#include <string>
+import std;
+
+export import :const_hash_map_iterator;
 
 namespace BasicHashMap {
 
-
+    export
     template <typename HashMap>
     class HashMapIterator : public ConstHashMapIterator<HashMap>
     {

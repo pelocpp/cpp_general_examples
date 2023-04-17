@@ -2,9 +2,9 @@
 // TestHash.cpp // Testing Hash Function
 // ===========================================================================
 
-#include <iostream>
+import hash_map;
 
-#include "Hash.h"
+import std;
 
 // function prototypes
 void test_hashFunction_01();

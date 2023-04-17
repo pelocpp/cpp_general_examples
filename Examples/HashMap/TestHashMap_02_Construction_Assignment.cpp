@@ -2,11 +2,10 @@
 // TestHashMap_02_Construction_Assignment.cpp // Testing Hash Function
 // ===========================================================================
 
-#include <iostream>
-#include <utility>
+import hash_map;
 
-#include "Hash.h"
-#include "HashMap.h"
+import std;
+
 
 // function prototypes
 static void testHashMap_01();

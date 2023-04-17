@@ -2,13 +2,14 @@
 // Hash.h // Hash Function & Implementation
 // ===========================================================================
 
-#pragma once
+export module hash_map:hash_function;
 
-#include <string>
+import std;
 
-namespace BasicHashMap {
+export namespace BasicHashMap {
 
 	// primary template - default hash function object
+    export
 	template <typename T>
 	class Hash
 	{
@@ -23,6 +24,8 @@ namespace BasicHashMap {
 				unsigned char b = *((reinterpret_cast<const unsigned char*>(&key)) + i);
 				sum += b;
 			}
+
+            sum += sum;  // WIEDER ENTFERNEN !!!
 
 			return sum;
 		}

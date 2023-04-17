@@ -2,23 +2,19 @@
 // HashMap.h // HashMap Interface & Implementation
 // ===========================================================================
 
-#pragma once
+export module hash_map;
 
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <vector>
-#include <list>
-#include <utility>
-#include <stdexcept>
+export import :hash_function;
+export import :const_hash_map_iterator;
+export import :hash_map_iterator;
 
-#include "ConstHashMapIterator.h"
-#include "HashMapIterator.h"
+import std;
 
 namespace BasicHashMap {
 
     // Besser: TKey, TValue
 
+    export
     template <typename Key, typename T>
     class HashMap
     {

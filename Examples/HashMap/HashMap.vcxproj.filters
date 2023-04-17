@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{ac3ecaec-1f02-4b02-a705-cf21c1320dbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Program.cpp">
@@ -20,9 +23,6 @@
     </ClCompile>
     <ClCompile Include="TestHash.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Hash.h">
-      <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="TestHashMap_01_Basics.cpp">
       <Filter>Source Files</Filter>
@@ -33,16 +33,20 @@
     <ClCompile Include="TestHashMap_03_STL_Compliance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="HashMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstHashMapIterator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HashMapIterator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="ConstHashMapIterator.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Hash.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="HashMap.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="HashMapIterator.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="std.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
