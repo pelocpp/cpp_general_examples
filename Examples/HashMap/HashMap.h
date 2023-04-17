@@ -7,13 +7,10 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <cstddef>
 #include <vector>
 #include <list>
-#include <string>
 #include <utility>
-#include <functional>
-#include <type_traits>
+#include <stdexcept>
 
 #include "ConstHashMapIterator.h"
 #include "HashMapIterator.h"
@@ -41,12 +38,12 @@ namespace BasicHashMap {
         using list_iterator_type = typename HashMap::ListType::const_iterator;
 
         using hash_map_type = HashMap<Key, T>;
-        using iterator = hash_map_iterator<hash_map_type>;
-        using const_iterator = const_hash_map_iterator<hash_map_type>;
+        using iterator = HashMapIterator<hash_map_type>;
+        using const_iterator = ConstHashMapIterator<hash_map_type>;
 
         // The iterator classes need access to all members of the hash_map
-        friend class hash_map_iterator<hash_map_type>;
-        friend class const_hash_map_iterator<hash_map_type>;
+        friend class HashMapIterator<hash_map_type>;
+        friend class ConstHashMapIterator<hash_map_type>;
 
 
     // private:  TO BE FIXED must be private
@@ -74,7 +71,7 @@ namespace BasicHashMap {
         HashMap(const HashMap& src) = default;
 
         // move constructor
-        HashMap(HashMap&& src) noexcept {
+        HashMap(HashMap&& src) noexcept : HashMap() {
             swap(*this, src);
         }
 
@@ -92,7 +89,7 @@ namespace BasicHashMap {
             // We know there is at least one element. Find the first element.
             for (size_t i = 0; i < m_buckets.size(); ++i) {
                 if (!m_buckets[i].empty()) {
-                    return hash_map_iterator<hash_map_type>(i, std::begin(m_buckets[i]), this);
+                    return HashMapIterator<hash_map_type>(i, std::begin(m_buckets[i]), this);
                 }
             }
             // Should never reach here, but if we do, return the end iterator.
@@ -103,7 +100,7 @@ namespace BasicHashMap {
 
             // The end iterator is the end iterator of the list of the last bucket.
             size_t bucket = m_buckets.size() - 1;
-            return hash_map_iterator<hash_map_type>(bucket, std::end(m_buckets[bucket]), this);
+            return HashMapIterator<hash_map_type>(bucket, std::end(m_buckets[bucket]), this);
         }
 
         const_iterator begin() const

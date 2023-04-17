@@ -138,9 +138,7 @@
   <ItemGroup>
     <ClInclude Include="ConstHashMapIterator.h" />
     <ClInclude Include="HashMapIterator.h" />
-    <ClInclude Include="_Hash.hpp" />
     <ClInclude Include="HashMap.h" />
-    <ClInclude Include="_HashMap.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

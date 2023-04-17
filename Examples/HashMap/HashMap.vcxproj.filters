@@ -35,13 +35,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="_Hash.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="HashMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="_HashMap.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ConstHashMapIterator.h">

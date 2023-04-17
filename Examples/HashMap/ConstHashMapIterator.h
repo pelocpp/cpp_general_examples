@@ -1,35 +1,18 @@
 // ===========================================================================
-// ConstHashMapIterator.h // HashMap Interface & Implementation
+// ConstHashMapIterator.h // Const Forward Iterator Interface & Implementation
 // ===========================================================================
 
 #pragma once
 
-//#include <iostream>
-//#include <iomanip>
-//#include <string>
-//#include <cstddef>
-//#include <vector>
-//#include <list>
-//#include <string>
-//#include <utility>
-//#include <functional>
-//#include <type_traits>
-
 #include <iostream>
 #include <string>
-#include <stdexcept>
-#include <algorithm>
-#include <utility>
 
 namespace BasicHashMap {
 
     // const_hash_map_iterator class definition
     template <typename HashMap>
-    class const_hash_map_iterator
+    class ConstHashMapIterator
     {
-        // The hash_map class needs access to all members of the const_hash_map_iterator
-       //friend HashMap;
-
     public:
         using value_type = typename HashMap::value_type;
         using difference_type = ptrdiff_t;
@@ -39,20 +22,19 @@ namespace BasicHashMap {
         using list_iterator_type = typename HashMap::ListType::const_iterator;
 
     protected:
-        size_t mBucketIndex = 0;
-        list_iterator_type mListIterator;
-        const HashMap* mHashmap = nullptr;
+        size_t m_bucketIndex = 0;
+        list_iterator_type m_listIterator;
+        const HashMap* m_hashmap = nullptr;
 
     public:
-        // Bidirectional iterators must supply a default constructor.
+        // Forward iterators must supply a default constructor.
         // Using an iterator constructed with the default constructor
         // is undefined, so it doesn't matter how it's initialized.
-        const_hash_map_iterator() = default;
+        ConstHashMapIterator() = default;
 
-        const_hash_map_iterator(size_t bucket, list_iterator_type listIt, const HashMap* hashmap)
-            : mBucketIndex(bucket), mListIterator(listIt), mHashmap(hashmap)
-        {
-        }
+        ConstHashMapIterator(size_t bucket, list_iterator_type iter, const HashMap* hashmap)
+            : m_bucketIndex{ bucket }, m_listIterator{ iter }, m_hashmap{ hashmap }
+        {}
 
         // Don't need to define a copy constructor or operator= because the
         // default behavior is what we want.
@@ -62,7 +44,7 @@ namespace BasicHashMap {
 
         const value_type& operator*() const
         {
-            return *mListIterator;
+            return *m_listIterator;
         }
 
         // Return type must be something to which -> can be applied.
@@ -70,37 +52,34 @@ namespace BasicHashMap {
         // will apply -> again.
         const value_type* operator->() const
         {
-            return &(*mListIterator);
+            return &(*m_listIterator);
         }
 
-        const_hash_map_iterator<HashMap>& operator++()
+        ConstHashMapIterator<HashMap>& operator++()
         {
             increment();
             return *this;
         }
 
 
-        const_hash_map_iterator<HashMap> operator++(int)
+        ConstHashMapIterator<HashMap> operator++(int)
         {
             auto oldIt = *this;
             increment();
             return oldIt;
         }
 
-        //const_hash_map_iterator<HashMap>& operator--();
-        //const_hash_map_iterator<HashMap> operator--(int);
-
         // The following are ok as member functions because we don't
         // support comparisons of different types to this one.
-        bool operator==(const const_hash_map_iterator<HashMap>& rhs) const
+        bool operator==(const ConstHashMapIterator<HashMap>& rhs) const
         {
             // All fields, including the hash_map to which the iterators refer, must be equal
-            return (mHashmap == rhs.mHashmap &&
-                mBucketIndex == rhs.mBucketIndex &&
-                mListIterator == rhs.mListIterator);
+            return (m_hashmap == rhs.m_hashmap &&
+                m_bucketIndex == rhs.m_bucketIndex &&
+                m_listIterator == rhs.m_listIterator);
         }
 
-        bool operator!=(const const_hash_map_iterator<HashMap>& rhs) const
+        bool operator!=(const ConstHashMapIterator<HashMap>& rhs) const
         {
             return !(*this == rhs);
         }
@@ -115,26 +94,26 @@ namespace BasicHashMap {
         void increment()
         {
             // mListIterator is an iterator into a single bucket. Increment it.
-            ++mListIterator;
+            ++m_listIterator;
 
             // If we're at the end of the current bucket,
             // find the next bucket with elements.
-            auto& buckets = mHashmap->m_buckets;
-            if (mListIterator == end(buckets[mBucketIndex])) {
-                for (size_t i = mBucketIndex + 1; i < buckets.size(); i++) {
+            auto& buckets = m_hashmap->m_buckets;
+            if (m_listIterator == end(buckets[m_bucketIndex])) {
+                for (size_t i = m_bucketIndex + 1; i < buckets.size(); i++) {
                     if (!buckets[i].empty()) {
                         // We found a non-empty bucket.
-                        // Make mListIterator refer to the first element in it.
-                        mListIterator = begin(buckets[i]);
-                        mBucketIndex = i;
+                        // Make m_listIterator refer to the first element in it.
+                        m_listIterator = begin(buckets[i]);
+                        m_bucketIndex = i;
                         return;
                     }
                 }
 
-                // No more non-empty buckets. Set mListIterator to refer to the
+                // No more non-empty buckets. Set m_listIterator to refer to the
                 // end iterator of the last list.
-                mBucketIndex = buckets.size() - 1;
-                mListIterator = end(buckets[mBucketIndex]);
+                m_bucketIndex = buckets.size() - 1;
+                m_listIterator = end(buckets[m_bucketIndex]);
             }
         }
     };

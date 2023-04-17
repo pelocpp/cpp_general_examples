@@ -11,8 +11,8 @@ extern void testHashMap_Compliance();
 int main() {
     // testHashFunction();
     // testHashMap_Basic();
-    // testHashMap_Construction_Assignment();
-    testHashMap_Compliance();
+     testHashMap_Construction_Assignment();
+    //testHashMap_Compliance();
     return 0;
 }
 
