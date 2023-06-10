@@ -1,5 +1,5 @@
 // ===========================================================================
-// HashMap.h // HashMap Interface & Implementation
+// HashMap.ixx // HashMap Interface & Implementation
 // ===========================================================================
 
 export module hash_map;
@@ -121,7 +121,8 @@ namespace BasicHashMap {
             return end();
         }
 
-        // public interface
+        /* public interface
+         */
 
         // inserting key-value pair
         bool insert(const EntryType& entry)

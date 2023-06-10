@@ -1,5 +1,5 @@
 // ===========================================================================
-// TestHashMap_01_Basics.cpp // Testing Hash Function
+// TestHashMap_02_Basics.ixx // Testing Hash Function
 // ===========================================================================
 
 export module hash_map_test:test_hashmap_basics;
@@ -60,7 +60,10 @@ static void testHashMap_04() {
     // warning: discarding return value of function with 'nodiscard' attribute
     // map.find(std::string{ "Mueller" });   
 
-    HashMap<std::string, size_t>::EntryType* entry{ map.find(std::string{ "Mueller" }) };
+    HashMap<std::string, size_t>::EntryType* entry{
+        map.find(std::string{ "Mueller" })
+    };
+
     if (entry != nullptr) {
         std::cout << "Mueller maps to " << entry->second << std::endl;
     }

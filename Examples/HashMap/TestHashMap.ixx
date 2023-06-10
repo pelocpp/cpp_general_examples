@@ -1,5 +1,5 @@
 // ===========================================================================
-// HashMapIterator.h // Forward Iterator Interface & Implementation
+// HashMapIterator.ixx // Forward Iterator Interface & Implementation
 // ===========================================================================
 
 export module hash_map_test;

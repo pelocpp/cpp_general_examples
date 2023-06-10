@@ -1,5 +1,5 @@
 // ===========================================================================
-// HashMapIterator.h // Forward Iterator Interface & Implementation
+// HashMapIterator.ixx // Forward Iterator Interface & Implementation
 // ===========================================================================
 
 export module hash_map:hash_map_iterator;
@@ -53,7 +53,7 @@ namespace BasicHashMap {
             return *this;
         }
 
-        // Defer the details to the increment() helper in the base class.
+        // defer the details to the increment() helper in the base class
         HashMapIterator<HashMap> operator++(int)
         {
             auto oldIt = *this;

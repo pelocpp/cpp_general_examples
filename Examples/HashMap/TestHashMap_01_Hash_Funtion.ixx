@@ -1,5 +1,5 @@
 // ===========================================================================
-// TestHashMap_01_Hash_Funtion.cpp // Testing Hash Function
+// TestHashMap_01_Hash_Funtion.ixx // Testing Hash Function
 // ===========================================================================
 
 export module hash_map_test:test_hash_function;

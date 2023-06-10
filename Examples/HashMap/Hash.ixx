@@ -1,6 +1,9 @@
 // ===========================================================================
-// Hash.h // Hash Function & Implementation
+// Hash.ixx // Hash Function & Implementation
 // ===========================================================================
+
+
+// TODO: Warum sind die beiden Operatoren nicht static
 
 export module hash_map:hash_function;
 
@@ -34,7 +37,7 @@ namespace BasicHashMap {
 	class Hash<std::string>
 	{
 	public:
-		size_t operator()(const std::string& key) const
+        size_t operator()(const std::string& key) const
 		{
 			size_t sum{};
 			for (auto ch : key) {

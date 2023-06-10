@@ -33,13 +33,10 @@
     <ClCompile Include="HashMapIterator.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="std.ixx">
+    <ClCompile Include="TestHashMap.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="TestHashMap_01_Hash_Funtion.ixx">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="TestHashMap.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="TestHashMap_02_Basics.ixx">
@@ -51,5 +48,10 @@
     <ClCompile Include="TestHashMap_04_STL_Compliance.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Readme.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

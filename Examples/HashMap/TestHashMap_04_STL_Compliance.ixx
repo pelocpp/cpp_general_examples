@@ -1,5 +1,5 @@
 // ===========================================================================
-// TestHashMap_03_STL_Compliance.cpp // Testing Hash Function
+// TestHashMap_04_STL_Compliance.ixx // Testing Hash Function
 // ===========================================================================
 
 export module hash_map_test:test_hashmap_stl_compliance;
@@ -25,13 +25,12 @@ static void testHashMap_01()
     map.insert(std::make_pair(std::string{ "Wagner" }, 98234));
 
     for (auto it = map.begin(); it != map.end(); ++it) {
-        // Use both -> and * to test the operations
+        // use both -> and * to test the operations
         std::cout << it->first << " maps to " << (*it).second << std::endl;
     }
 
-
     for (auto it = map.cbegin(); it != map.cend(); ++it) {
-        // Use both -> and * to test the operations
+        // use both -> and * to test the operations
         std::cout << it->first << " maps to " << (*it).second << std::endl;
     }
 }
@@ -79,10 +78,20 @@ static void testHashMap_03()
     // std::vector<std::string> names;
     HashMap<std::string, size_t> map2{};
 
+
+    // using value_type = std::pair<const Key, T>;
+
     //std::copy_if(
     //    map.begin(),
     //    map.end(),
-    //    std::insert_iterator(map2),
+    //    // std::insert_iterator<HashMap<std::string, size_t>>(map2),
+    //    // std::insert_iterator<HashMap<std::string, size_t>>(map2, std::next(map2.begin())),
+    //    // std::inserter(map2, std::next(map2.begin())),
+
+    //  //  std::inserter(map2, map2.end()),
+
+    //    // map2.begin(),
+
     //    [](const auto& entry) {
 
     //        return true;

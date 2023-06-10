@@ -1,5 +1,5 @@
 // ===========================================================================
-// ConstHashMapIterator.h // Const Forward Iterator Interface & Implementation
+// ConstHashMapIterator.ixx // Const Forward Iterator Interface & Implementation
 // ===========================================================================
 
 export module hash_map:const_hash_map_iterator;
@@ -99,7 +99,8 @@ namespace BasicHashMap {
             // If we're at the end of the current bucket,
             // find the next bucket with elements.
             auto& buckets = m_hashmap->m_buckets;
-            if (m_listIterator == end(buckets[m_bucketIndex])) {
+
+            if (m_listIterator == std::end(buckets[m_bucketIndex])) {
                 for (size_t i = m_bucketIndex + 1; i < buckets.size(); i++) {
                     if (!buckets[i].empty()) {
                         // We found a non-empty bucket.
@@ -113,7 +114,7 @@ namespace BasicHashMap {
                 // No more non-empty buckets. Set m_listIterator to refer to the
                 // end iterator of the last list.
                 m_bucketIndex = buckets.size() - 1;
-                m_listIterator = end(buckets[m_bucketIndex]);
+                m_listIterator = std::end(buckets[m_bucketIndex]);
             }
         }
     };
