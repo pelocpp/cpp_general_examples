@@ -81,22 +81,30 @@ static void testHashMap_03()
 
     // using value_type = std::pair<const Key, T>;
 
-    //std::copy_if(
-    //    map.begin(),
-    //    map.end(),
-    //    // std::insert_iterator<HashMap<std::string, size_t>>(map2),
-    //    // std::insert_iterator<HashMap<std::string, size_t>>(map2, std::next(map2.begin())),
-    //    // std::inserter(map2, std::next(map2.begin())),
+    // user written output iterator
 
-    //  //  std::inserter(map2, map2.end()),
+    // https://brevzin.github.io/c++/2022/02/06/output-iterators/
 
-    //    // map2.begin(),
+    // https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp
 
-    //    [](const auto& entry) {
 
-    //        return true;
-    //    }
-    //);
+
+    std::copy_if(
+        map.begin(),
+        map.end(),
+        // std::insert_iterator<HashMap<std::string, size_t>>(map2),
+        // std::insert_iterator<HashMap<std::string, size_t>>(map2, std::next(map2.begin())),
+        // std::inserter(map2, std::next(map2.begin())),
+
+        std::inserter(map2, map2.end()),
+
+        // map2.begin(),
+
+        [](const auto& entry) {
+
+            return true;
+        }
+    );
 }
 
 static void testHashMap_04()
