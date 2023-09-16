@@ -1,5 +1,12 @@
 # Beispiel "RPN Calculator"
 
+
+---
+
+[Zurück](../../../Readme.md)
+
+---
+
 ## Einführung
 
 Die Notation eines mathematischen Ausdrucks, wie wir ihn aus der Mathematik kennen, zum Beispiel 2 \* (7 + 5),
@@ -26,8 +33,11 @@ Der [HP 12c Financial Calculator](https://support.hp.com/hr-en/document/c0190360
 
 <img src="HP-12C_RPN_calculator.jpg" width="450">
 
-Abbildung 1: HP 12c Financial Calculator.
+*Abbildung* 1: HP 12c Financial Calculator.
+
 
 ---
 
 [Zurück](../../../Readme.md)
+
+---

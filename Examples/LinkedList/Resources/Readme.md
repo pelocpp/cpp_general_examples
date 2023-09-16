@@ -8,3 +8,4 @@ https://solarianprogrammer.com/2019/02/22/cpp-17-implementing-singly-linked-list
 
 [Zurück](../../../Readme.md)
 
+---

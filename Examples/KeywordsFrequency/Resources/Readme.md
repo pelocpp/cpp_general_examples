@@ -1,5 +1,12 @@
 # Beispiel "Häufigkeitsliste für C++ Schlüsselwörter"
 
+
+---
+
+[Zurück](../../../Readme.md)
+
+---
+
 Erstellen Sie ein Programm, das zu einer C++-Quelldatei eine Häufigkeitsliste (*frequency list*) aller verwendeten C++ Schlüsselwörter generiert.
 Darunter verstehen wir eine alphabetisch sortierte Liste aller Schlüsselwörter,
 die in einer C++-Quelldatei auftreten. Die Ausgabe des Programms könnte so aussehen:
@@ -94,3 +101,5 @@ Sie sehen bereits an diesen Erläuterungen, dass diese Aufgabe viel Freiraum für 
 ---
 
 [Zurück](../../../Readme.md)
+
+---

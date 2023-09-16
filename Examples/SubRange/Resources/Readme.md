@@ -1,5 +1,12 @@
 # Beispiel "Teilbereichsdatentyp" / Klasse `SubRange`
 
+
+---
+
+[Zurück](../../../Readme.md)
+
+---
+
 In diesem Beispiel werden mehrere Realisierungen einer Klasse `SubRange` betrachtet.
 
 Welchen Sinn verfolgt diese Klasse? In der Programmiersprache Pascal gibt es einen sogenannten *TeilbereichsDatentyp*,
@@ -151,3 +158,4 @@ calling check ...
 
 [Zurück](../../../Readme.md)
 
+---

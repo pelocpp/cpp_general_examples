@@ -148,7 +148,8 @@
     <None Include="Resources\Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CustomIterator.cpp" />
+    <ClCompile Include="CustomIterator_01.cpp" />
+    <ClCompile Include="CustomIterator_02.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

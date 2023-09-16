@@ -20,10 +20,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CustomIterator.cpp">
+    <ClCompile Include="CustomIterator_02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomIterator_01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

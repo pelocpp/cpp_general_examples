@@ -1,18 +1,27 @@
 // ===============================================================================
-// CustomIterator.cpp // Demo Implementierung: Custom Iterator fuer Klasse Range
+// CustomIterator_02.cpp // Demo Implementierung: Custom Iterator fuer Klasse Range
 // ===============================================================================
 
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <stdexcept>
+#include <iterator>
 
 /*
  * RangeIterator
  */
 
 template <typename T>
-class RangeIterator {
+class RangeIterator
+{
+public:
+    using value_type = T;
+    using difference_type = size_t;
+    using iterator_category = std::forward_iterator_tag;
+    using pointer = T*;
+    using reference = T&;
+
 private:
     T m_pos;
 
@@ -51,7 +60,7 @@ bool RangeIterator<T>::operator== (const RangeIterator& other) {
 
 template <typename T>
 bool RangeIterator<T>::operator!= (const RangeIterator& other) {
-    return  !(*this == other);
+    return !(*this == other);
 }
 
 // ===============================================================================
@@ -61,7 +70,8 @@ bool RangeIterator<T>::operator!= (const RangeIterator& other) {
  */
 
 template <typename T, T Low, T High>
-class Range {
+class Range
+{
 private:
     T m_low;
     T m_high;
@@ -99,7 +109,7 @@ RangeIterator<T> Range<T, Low, High>::end() const {
  * Range
  */
 
-void test_01_rangeiterator() {
+void test_01_range_iterator() {
     Range<long, 1, 5> range1;
     std::cout << "From " << range1.getLow() << " until " 
         << range1.getHigh() << std::endl;
@@ -125,7 +135,7 @@ void test_01_rangeiterator() {
     std::cout << std::endl;
 }
 
-void test_02_rangeiterator() {
+void test_02_range_iterator() {
     try {
         Range<long, 20, 10> range;
     }
@@ -134,17 +144,18 @@ void test_02_rangeiterator() {
     }
 }
 
-void test_03_rangeiterator() {
+void test_03_range_iterator() {
     Range<long, 1, 100> range;
     auto [min_it, max_it] = 
         std::minmax_element(std::begin(range), std::end(range));
     std::cout << *min_it << " - " << *max_it << std::endl;
 }
 
-void main_custom_iterator() {
-    test_01_rangeiterator();
-    test_02_rangeiterator();
-    test_03_rangeiterator();
+void main_custom_iterator_02 () {
+
+    test_01_range_iterator();
+    test_02_range_iterator();
+    test_03_range_iterator();
 }
 
 // ===============================================================================

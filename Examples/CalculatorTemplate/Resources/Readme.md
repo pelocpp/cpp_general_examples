@@ -2,6 +2,10 @@
 
 ---
 
+[Zurück](../../../Readme.md)
+
+---
+
 In dieser Fallstudie geht es darum, wesentliche Techniken der generischen Programmierung
 an einem Beispiel in der Praxis aufzuzeigen.
 Zu diesem Zweck betrachten wir die Funktionalität eines Taschenrechners und
@@ -95,3 +99,6 @@ als &ldquo;*Member Function Template*&rdquo;.
 
 ---
 
+[Zurück](../../../Readme.md)
+
+---

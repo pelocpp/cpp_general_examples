@@ -1,5 +1,11 @@
 # Realisierung der Standardklasse `std::tuple<>`
 
+---
+
+[Zurück](../../../Readme.md)
+
+---
+
 In zwei Realisierungen wird eine vereinfachte Realisierung der Standardklasse `std::tuple<>` betrachtet.
 
 Die erste Realisierung ist in dem Buch *"C++ Templates: The Complete Guide (2nd Edition)"*
@@ -20,3 +26,4 @@ ein tieferes Verständnis für variadische Templates als auch die Klasse `std::tup
 
 [Zurück](../../../Readme.md)
 
+---

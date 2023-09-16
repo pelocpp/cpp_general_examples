@@ -1,5 +1,11 @@
 # Beispiel "Klassenhierarchie mit geometrischen Figuren (Shapes)"
 
+---
+
+[Zurück](../../../Readme.md)
+
+---
+
 Am klassischen Beispiel der "geometrischen Figuren" werden in dieser Fallstudie
 alle Features und Merkmale des Themas "Vererbung in C++" aufgezeigt.
 
@@ -117,3 +123,9 @@ Shape: Cone
     Volume:  12566.37
     Surface: 3522.07
 ```
+
+---
+
+[Zurück](../../../Readme.md)
+
+---

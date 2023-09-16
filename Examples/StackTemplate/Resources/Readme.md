@@ -1,5 +1,12 @@
 # Beispiel Klassen-Template für einen Stapel (*Stack*)
 
+
+---
+
+[Zurück](../../../Readme.md)
+
+---
+
 Wir stellen die Realisierung eines Klassen-Template für einen Stapel (*Stack*) vor.
 Bei einer Implementierung der Klasse bleibt der konkrete Typ offen, es wird ein Stellvertreterbezeichner benutzt
 (in der Regel `T`).
@@ -44,3 +51,5 @@ public:
 ---
 
 [Zurück](../../../Readme.md)
+
+---
